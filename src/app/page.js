@@ -30,23 +30,21 @@ export default function Home() {
             </li>
           </ul>
         </nav>
-        <div className='text-center p-10'>
-          <h2 className='text-5xl py-2 font-medium text-teal-600 md:text-6xl'>
-            Gnanavel Premnath
-          </h2>
-          <h3 className='text-2xl py-2 md:text-3xl'>
-            Software Developer
-          </h3>
-          <p className='text-md py-5 leading-8 md:text-xl'>
-            Navigating the wild world of Computer Science at Simon Fraser University in the ever-rainy Vancouver, BC, I've found myself caught in a love triangle between full-stack development, artificial intelligence, and game development. It's like a techy soap opera, and I'm here for all the drama!
-          </p>
-        </div>
-        <div className='relative mx-auto bg-gradient-to-b from-cyan-900 to-teal-900 rounded-full w-80 h-80 overflow-hidden'>
-          <Image src={devad} layout='fill' objectFit='cover'/>
-        </div>
-      </section>
 
-      <section>
+        <section className='home'>
+          <div className='home-content'>
+            <h1>
+              Hi, I'm <span>Gnanavel Premnath</span>
+            </h1>
+            <div className='text-animate'>
+              <h3>Software Developer</h3>
+            </div>
+            <p>
+              Navigating the wild world of Computer Science at Simon Fraser University in the ever-rainy Vancouver, BC, I've found myself caught in a love triangle between full-stack development, artificial intelligence, and game development. It's like a techy soap opera, and I'm here for all the drama!
+            </p>
+          </div>
+        </section>
+
         <div>
           <h3 className='text-3xl mt-10 mb-5'>
             Projects:
@@ -145,11 +143,15 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       <section>
         <div>
           <h3 className='text-3xl py-1'>About Me</h3>
+          <p>UNDER CONSTRUCTION</p>
         </div>
       </section>
+
+    
     </main>
   )
 }

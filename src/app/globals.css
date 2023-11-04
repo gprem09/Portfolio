@@ -43,3 +43,17 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+.home {
+  display:flex;
+  align-items: center;
+  padding: 0 9%;
+}
+
+.home-content{
+  max-width: 60rem;
+}
+
+.home-content h1{
+  font-size:3rem;
+  font-weight:700;
+}
