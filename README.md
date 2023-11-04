@@ -1,7 +1,7 @@
 # Personal Portfolio
 
 <p>You can view my website at:</p>
-<a href="gnanavelpremnath.com">CLICK HERE!</a>
+<a href="gnanavelpremnath.com">gnanavelpremnath.com</a>
 
 ### Built With
 
