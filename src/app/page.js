@@ -10,6 +10,9 @@ export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   return (
     <main className={`md:px-20 lg:px-20 px-10 transition ${isDarkMode ? 'bg-black text-white' : 'bg-white text-black'}`}>
+      <h2 className={`mb-3 text-2xl p-10 font-semibold`}>
+          *Under Construction- Will be ready on November 5th*
+      </h2>
       <section className="min-h-screen">
         <nav className='py-10 mb-12 flex justify-between'>
           <div className='flex item-center gap-8'>
@@ -27,7 +30,7 @@ export default function Home() {
               />
             </li>
             <li>
-              <a className='px-4 py-2 ml-8 text-white bg-gradient-to-r from-cyan-900 to-teal-900 rounded-md' href="#">Resume</a>
+              <a className='px-6 py-4 ml-8 text-white bg-gradient-to-r from-cyan-900 to-teal-900 rounded-md' href="#">Resume</a>
             </li>
           </ul>
         </nav>
@@ -35,10 +38,10 @@ export default function Home() {
         <section className='home'>
           <div className='home-content'>
             <h1>
-              Hi, I'm <span>Gnanavel Premnath</span>
+              Hi, <span> I'm Gnanavel Premnath</span>
             </h1>
-            <div className='text-3xl'>
-              <h3>SOFTWARE ENGINEER</h3>
+            <div className='text-2xl'>
+              <h3>Software Developer</h3>
             </div>
             <p className='text-xl'>
               Navigating the wild world of Computer Science at Simon Fraser University in the ever-rainy Vancouver, BC, I've found myself caught in a love triangle between full-stack development, artificial intelligence, and game development. It's like a techy soap opera, and I'm here for all the drama!
