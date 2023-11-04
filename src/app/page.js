@@ -104,7 +104,7 @@ export default function Home() {
               2D-Arcade Game
             </h3>
             <p className='py-2'>
-              In September 2021, I led a group project to develop a 2D arcade game named "Spirit Experiment". We applied Java Swing and Graphics2D to create a visually engaging and responsive game engine. We adopted Agile Scrum methodologies, such as sprint planning, daily stand-ups, and retrospectives, which enhanced our workflow and project management. To ensure the reliability of our game logic and mechanics, we utilized JUnit and Junit.jupiter for thorough unit testing, aiming for a bug-free user experience. The combination of these practices contributed to the successful delivery of a robust and enjoyable 2D arcade gaming experience.
+              In September 2021, I led a group project to develop a 2D arcade game named &quot;Spirit Experiment&quot;. We applied Java Swing and Graphics2D to create a visually engaging and responsive game engine. We adopted Agile Scrum methodologies, such as sprint planning, daily stand-ups, and retrospectives, which enhanced our workflow and project management. To ensure the reliability of our game logic and mechanics, we utilized JUnit and Junit.jupiter for thorough unit testing, aiming for a bug-free user experience. The combination of these practices contributed to the successful delivery of a robust and enjoyable 2D arcade gaming experience.
             </p>
             <h4 className='text-center py-4 text-teal-500'>
               Main Programming languages and tools used:
@@ -162,7 +162,7 @@ export default function Home() {
               Arduino Gesture Control Car
             </h3>
             <p className='py-2'>
-              In December 2019, I worked on an embedded systems project to create a gesture-controlled car using Arduino, showcasing my skills in electronics. This innovative project involved developing a system that recognizes finger gestures to command the car's movement, allowing for an intuitive driving experience. I programmed in C++ within the Arduino IDE, which was crucial for the seamless integration of the hardware and software, resulting in a responsive and precise control mechanism. This work highlighted the exciting possibilities for enhancing human-machine interaction, specifically in the realm of vehicular control.
+              In December 2019, I worked on an embedded systems project to create a gesture-controlled car using Arduino, showcasing my skills in electronics. This innovative project involved developing a system that recognizes finger gestures to command the car&apos;s movement, allowing for an intuitive driving experience. I programmed in C++ within the Arduino IDE, which was crucial for the seamless integration of the hardware and software, resulting in a responsive and precise control mechanism. This work highlighted the exciting possibilities for enhancing human-machine interaction, specifically in the realm of vehicular control.
             </p>
             <h4 className='text-center py-4 text-teal-500'>
               Main Programming languages and tools used:
