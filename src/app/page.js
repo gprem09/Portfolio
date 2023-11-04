@@ -50,97 +50,46 @@ export default function Home() {
             Projects:
           </h3>
         </div>
-        <div className='grid lg:grid-cols-3 gap-10'>
-          <div className='text-center shadow-lg p-10 rounded-xl my-10'>
-            <h3 className='text-lg font-medium pt-8 pb-2 text-teal-500'>
+        <div className='grid lg:grid-cols-2 gap-10'>
+          <div className='shadow-lg p-10 rounded-xl my-10'>
+            <AiFillGithub className='text-xl'/>
+            <h3 className='text-center text-lg font-medium pt-8 pb-2 text-teal-500'>
               Full Stack Development
             </h3>
             <p className='py-2'>
-              Made a movie-show review web application using TMDB API
+            In September 2022, I designed and deployed a multimedia review platform built with the MEAN stack, aimed at improving the way users engage with movie and TV show reviews. This platform features integration with the TMDb API, which allows for easy access to movie and TV show data and lets users search for content by genre. For user security and management, the platform includes JWT for user authentication and CRUD operations. The backend is powered by MongoDB, offering a scalable database solution. The application is hosted on Google Cloud Platform to ensure it runs smoothly and can handle more users as it grows.
             </p>
-            <h4 className='py-4 text-teal-500'>
-              Programming languages and Framework used:
+            <h4 className='text-center py-4 text-teal-500'>
+              Main Programming languages and tools used:
             </h4>
-            <p className='py-1'>HTML</p>
-            <p className='py-1'>CSS</p>
-            <p className='py-1'>TS</p>
-            <p className='py-1'>ANGULAR</p>
+              <div className='flex justify-between'>
+                <p className='py-1'>JavaScript</p>
+                <p className='py-1'>MongoDB</p>
+                <p className='py-1'>Express</p>
+                <p className='py-1'>Angular</p>
+                <p className='py-1'>NodeJS</p>
+              </div>
           </div>
-          <div className='text-center shadow-lg p-10 rounded-xl my-10'>
-            <h3 className='text-lg font-medium pt-8 pb-2 text-teal-500'>
-              Full Stack Development
+
+          <div className='shadow-lg p-10 rounded-xl my-10'>
+            <AiFillGithub className='text-xl'/>
+            <h3 className='text-center text-lg font-medium pt-8 pb-2 text-teal-500'>
+              Angular Project
             </h3>
             <p className='py-2'>
-              Made a movie-show review web application using TMDB API
+              In March 2021, I developed a dynamic Angular web application that allowed the public to report and monitor missing pigs effectively. This platform offers enhanced engagement and functionality through interactive features. With CRUD operations, JSON libraries, and REST APIs, the app manages data on a web server seamlessly. I integrated the Leaflet maps API to help users filter reports, interact with map markers, and obtain a detailed view of pig sightings. The application includes well-designed forms for easy report submission and smart feedback systems for handling user errors, ensuring an intuitive and smooth user experience.
             </p>
-            <h4 className='py-4 text-teal-500'>
-              Programming languages and Framework used:
+            <h4 className='text-center py-4 text-teal-500'>
+              Main Programming languages and tools used:
             </h4>
-            <p className='py-1'>HTML</p>
-            <p className='py-1'>CSS</p>
-            <p className='py-1'>TS</p>
-            <p className='py-1'>ANGULAR</p>
+              <div className='flex justify-between'>
+                <p className='py-1'>Angular</p>
+                <p className='py-1'>HTML</p>
+                <p className='py-1'>CSS</p>
+                <p className='py-1'>TypeScript</p>
+              </div>
           </div>
-          <div className='text-center shadow-lg p-10 rounded-xl my-10'>
-            <h3 className='text-lg font-medium pt-8 pb-2 text-teal-500'>
-              Full Stack Development
-            </h3>
-            <p className='py-2'>
-              Made a movie-show review web application using TMDB API
-            </p>
-            <h4 className='py-4 text-teal-500'>
-              Programming languages and Framework used:
-            </h4>
-            <p className='py-1'>HTML</p>
-            <p className='py-1'>CSS</p>
-            <p className='py-1'>TS</p>
-            <p className='py-1'>ANGULAR</p>
-          </div>
-          <div className='text-center shadow-lg p-10 rounded-xl my-10'>
-            <h3 className='text-lg font-medium pt-8 pb-2 text-teal-500'>
-              Full Stack Development
-            </h3>
-            <p className='py-2'>
-              Made a movie-show review web application using TMDB API
-            </p>
-            <h4 className='py-4 text-teal-500'>
-              Programming languages and Framework used:
-            </h4>
-            <p className='py-1'>HTML</p>
-            <p className='py-1'>CSS</p>
-            <p className='py-1'>TS</p>
-            <p className='py-1'>ANGULAR</p>
-          </div>
-          <div className='text-center shadow-lg p-10 rounded-xl my-10'>
-            <h3 className='text-lg font-medium pt-8 pb-2 text-teal-500'>
-              Full Stack Development
-            </h3>
-            <p className='py-2'>
-              Made a movie-show review web application using TMDB API
-            </p>
-            <h4 className='py-4 text-teal-500'>
-              Programming languages and Framework used:
-            </h4>
-            <p className='py-1'>HTML</p>
-            <p className='py-1'>CSS</p>
-            <p className='py-1'>TS</p>
-            <p className='py-1'>ANGULAR</p>
-          </div>
-          <div className='text-center shadow-lg p-10 rounded-xl my-10'>
-            <h3 className='text-lg font-medium pt-8 pb-2 text-teal-500'>
-              Full Stack Development
-            </h3>
-            <p className='py-2'>
-              Made a movie-show review web application using TMDB API
-            </p>
-            <h4 className='py-4 text-teal-500'>
-              Programming languages and Framework used:
-            </h4>
-            <p className='py-1'>HTML</p>
-            <p className='py-1'>CSS</p>
-            <p className='py-1'>TS</p>
-            <p className='py-1'>ANGULAR</p>
-          </div>
+        
         </div>
       </section>
 
