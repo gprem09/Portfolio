@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <main className={`md:px-20 lg:px-20 px-10 transition ${isDarkMode ? 'bg-black text-white' : 'bg-white text-black'}`}>
       <h2 className={`mb-3 text-2xl p-10 font-semibold`}>
-          *Under Construction- Will be ready on November 5th*
+          *Under Construction- Will be ready on November 5, 2023*
       </h2>
       <section className="min-h-screen">
         <nav className='py-10 mb-12 flex justify-between'>
