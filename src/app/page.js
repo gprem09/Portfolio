@@ -10,6 +10,11 @@ export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   return (
     <main className={`md:px-20 lg:px-20 px-10 transition ${isDarkMode ? 'bg-teal-950 text-white' : 'bg-white text-black'}`}>
+      <section>
+        <div className='text-center text-10xl'>
+          <h1>*UNDER CONSTRUCTION* Will be ready by November 5, 2023</h1>
+        </div>
+      </section>
       <section className="min-h-screen">
         <nav className='py-10 mb-12 flex justify-between'>
           <div className='flex item-center gap-8'>
@@ -128,6 +133,45 @@ export default function Home() {
                 <p className='py-1'>C Language</p>
               </div>
           </div>
+
+          {/* NoteTaking App */}
+          <div className='shadow-lg p-10 rounded-xl my-10'>
+            <AiFillGithub className='text-xl'/>
+            <h3 className='text-center text-lg font-medium pt-8 pb-2 text-teal-500'>
+              Note-Taking App
+            </h3>
+            <p className='py-2'>
+              For my journey into backend development, I developed a full-stack note-taking app enabling users to manage their notes through operations such as creating, viewing, updating, and deleting (CRUD functionality). The server-side was done by Express.js, which facilitated the routing with a MongoDB database. On the client side, EJS was used for the user interface. Features like efficient pagination and an organized dashboard were incorporated to enhance user experience. For deployment, Docker was utilized, which not only streamlined the launch process but also ensured that the application could be run consistently across different computing environments.
+            </p>
+            <h4 className='text-center py-4 text-teal-500'>
+              Main Programming languages and tools used:
+            </h4>
+            <div className='flex justify-between'>
+                <p className='py-1'>JavaScript</p>
+                <p className='py-1'>Embedded JS</p>
+                <p className='py-1'>MongoDB</p>
+                <p className='py-1'>Express</p>
+                <p className='py-1'>Docker</p>
+              </div>
+          </div>
+
+          {/* Arduino Gesture Control Car */}
+          <div className='shadow-lg p-10 rounded-xl my-10'>
+            <AiFillGithub className='text-xl'/>
+            <h3 className='text-center text-lg font-medium pt-8 pb-2 text-teal-500'>
+              Arduino Gesture Control Car
+            </h3>
+            <p className='py-2'>
+              In December 2019, I worked on an embedded systems project to create a gesture-controlled car using Arduino, showcasing my skills in electronics. This innovative project involved developing a system that recognizes finger gestures to command the car's movement, allowing for an intuitive driving experience. I programmed in C++ within the Arduino IDE, which was crucial for the seamless integration of the hardware and software, resulting in a responsive and precise control mechanism. This work highlighted the exciting possibilities for enhancing human-machine interaction, specifically in the realm of vehicular control.
+            </p>
+            <h4 className='text-center py-4 text-teal-500'>
+              Main Programming languages and tools used:
+            </h4>
+            <div className='flex justify-center'>
+                <p className='py-1'>C++ Language</p>
+              </div>
+          </div>
+
         </div>
       </section>
 
