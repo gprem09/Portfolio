@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import { useState } from 'react';
 import {BsFillMoonStarsFill} from 'react-icons/bs'
-import {AiFillLinkedin, AiFillInstagram, AiFillMail} from 'react-icons/ai'
+import {AiFillLinkedin, AiFillInstagram, AiFillMail, AiFillGithub} from 'react-icons/ai'
 import devad from 'public/comp.png'
 
 export default function Home() {
@@ -16,6 +16,7 @@ export default function Home() {
             <AiFillInstagram className='text-2xl'/>
             <AiFillLinkedin className='text-2xl'/>
             <AiFillMail className='text-2xl'/>
+            <AiFillGithub className='text-2xl'/>
           </div>
           
           <ul className='flex item-center'>
@@ -36,17 +37,17 @@ export default function Home() {
             <h1>
               Hi, I'm <span>Gnanavel Premnath</span>
             </h1>
-            <div className='text-animate'>
-              <h3>Software Developer</h3>
+            <div className='text-3xl'>
+              <h3>SOFTWARE ENGINEER</h3>
             </div>
-            <p>
+            <p className='text-xl'>
               Navigating the wild world of Computer Science at Simon Fraser University in the ever-rainy Vancouver, BC, I've found myself caught in a love triangle between full-stack development, artificial intelligence, and game development. It's like a techy soap opera, and I'm here for all the drama!
             </p>
           </div>
         </section>
 
         <div>
-          <h3 className='text-3xl mt-10 mb-5'>
+          <h3 className='text-3xl'>
             Projects:
           </h3>
         </div>
