@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+.cool-grey-one {
+  color: #2C3E50;
+}
+.cool-grey-two {
+  color: #95A5A6;
+}
+.cool-grey-three {
+  color: #D6DBDF;
+}
+.cool-grey-four {
+  color: #F2F4F6;
+}
+
+.transition {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
