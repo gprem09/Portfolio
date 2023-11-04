@@ -38,13 +38,13 @@ export default function Home() {
         <section className='home'>
           <div className='home-content'>
             <h1>
-              Hi, <span> I'm Gnanavel Premnath</span>
+              Hi, <span> I&apos;m Gnanavel Premnath</span>
             </h1>
             <div className='text-2xl'>
               <h3>Software Developer</h3>
             </div>
             <p className='text-xl'>
-              Navigating the wild world of Computer Science at Simon Fraser University in the ever-rainy Vancouver, BC, I've found myself caught in a love triangle between full-stack development, artificial intelligence, and game development. It's like a techy soap opera, and I'm here for all the drama!
+              Navigating the wild world of Computer Science at Simon Fraser University in the ever-rainy Vancouver, BC, I&apos;ve found myself caught in a love triangle between full-stack development, artificial intelligence, and game development. It&apos;s like a techy soap opera, and I&apos;m here for all the drama!
             </p>
           </div>
         </section>
