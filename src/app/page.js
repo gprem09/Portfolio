@@ -3,20 +3,16 @@
 import Image from 'next/image'
 import { useState } from 'react';
 import {BsFillMoonStarsFill} from 'react-icons/bs'
-import {AiFillLinkedin, AiFillInstagram, AiFillMail, AiFillGithub} from 'react-icons/ai'
-import devad from 'public/comp.png'
+import {AiFillLinkedin, AiFillMail, AiFillGithub} from 'react-icons/ai'
+import DarkModeToggle from './DarkModeToggle'; 
 
 export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   return (
-    <main className={`md:px-20 lg:px-20 px-10 transition ${isDarkMode ? 'bg-black text-white' : 'bg-white text-black'}`}>
-      <h2 className={`mb-3 text-2xl p-10 font-semibold`}>
-          *Under Construction- Will be ready on November 5, 2023*
-      </h2>
+    <main className={`md:px-20 lg:px-20 px-10 transition ${isDarkMode ? 'bg-teal-950 text-white' : 'bg-white text-black'}`}>
       <section className="min-h-screen">
         <nav className='py-10 mb-12 flex justify-between'>
           <div className='flex item-center gap-8'>
-            <AiFillInstagram className='text-2xl'/>
             <AiFillLinkedin className='text-2xl'/>
             <AiFillMail className='text-2xl'/>
             <AiFillGithub className='text-2xl'/>
@@ -24,13 +20,13 @@ export default function Home() {
           
           <ul className='flex item-center'>
             <li>
-              <BsFillMoonStarsFill 
-                className='cursor-pointer text-2xl' 
-                onClick={() => setIsDarkMode(!isDarkMode)}
+              <DarkModeToggle 
+                isDarkMode={isDarkMode} 
+                toggleDarkMode={() => setIsDarkMode(!isDarkMode)}
               />
             </li>
             <li>
-              <a className='px-6 py-4 ml-8 text-white bg-gradient-to-r from-cyan-900 to-teal-900 rounded-md' href="#">Resume</a>
+              <a className='px-6 py-4 ml-8' href="https://tmpfiles.org/dl/3065132/gnanavel_premnath_resume.pdf" target="_blank" rel="Resume">Resume</a>
             </li>
           </ul>
         </nav>
