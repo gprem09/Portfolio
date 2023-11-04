@@ -1,20 +1,50 @@
 "use client";
 
 import Image from 'next/image'
-import { useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import {BsFillMoonStarsFill} from 'react-icons/bs'
 import {AiFillLinkedin, AiFillMail, AiFillGithub} from 'react-icons/ai'
-import DarkModeToggle from './DarkModeToggle'; 
+import DarkModeToggle from './DarkModeToggle'
+import { Col, Container, Row } from 'react-bootstrap';
+
 
 export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [loopNum, setLoopNum] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const toRotate = ["Software", "Web", "Game"];
+  const [text, setText] = useState('');
+  const [delta, setDelta] = useState(300 - Math.random() * 100);
+  const period = 2000;
+
+  const tick = useCallback(() => {
+    let i = loopNum % toRotate.length;
+    let fullText = toRotate[i];
+    let updatedText = isDeleting ? fullText.substring(0, text.length - 1) : fullText.substring(0, text.length + 1);
+
+    setText(updatedText);
+
+    if (isDeleting) {
+      setDelta(prevDelta => Math.max(prevDelta / 2, 50)); // Ensure it doesn't go too low
+    }
+
+    if (!isDeleting && updatedText === fullText) {
+      setIsDeleting(true);
+      setDelta(period);
+    } else if (isDeleting && updatedText === '') {
+      setIsDeleting(false);
+      setLoopNum(loopNum + 1);
+      setDelta(500);
+    }
+  }, [text, isDeleting, loopNum, toRotate, setIsDeleting, setText, setDelta]);
+
+  useEffect(() => {
+    let ticker = setInterval(tick, delta);
+    return () => clearInterval(ticker);
+  }, [tick, delta]);
+
   return (
     <main className={`md:px-20 lg:px-20 px-10 transition ${isDarkMode ? 'bg-teal-950 text-white' : 'bg-white text-black'}`}>
-      <section>
-        <div className='text-center text-10xl'>
-          <h1>*UNDER CONSTRUCTION* Will be ready by November 5, 2023</h1>
-        </div>
-      </section>
       <section className="min-h-screen">
         <nav className='py-10 mb-12 flex justify-between'>
           <div className='flex item-center gap-8'>
@@ -36,29 +66,34 @@ export default function Home() {
           </ul>
         </nav>
 
-        <section className='home'>
-          <div className='home-content'>
-            <h1>
-              Hi, <span> I&apos;m Gnanavel Premnath</span>
-            </h1>
-            <div className='text-2xl'>
-              <h3>Software Developer</h3>
-            </div>
-            <p className='text-xl'>
-              Navigating the wild world of Computer Science at Simon Fraser University in the ever-rainy Vancouver, BC, I&apos;ve found myself caught in a love triangle between full-stack development, artificial intelligence, and game development. It&apos;s like a techy soap opera, and I&apos;m here for all the drama!
-            </p>
-          </div>
+
+
+        <section className='banner' id='home'>
+          <Container>
+            <Row className='text-center'>
+              <Col xs={12} md={6} xl={7}>
+                <h1>Hi I&apos;m Gnanavel Premnath</h1>
+                <h2>Am I <span className='wrap'>{text}</span> Developer?</h2>
+                <p>Navigating the wild world of Computer Science at Simon Fraser University in the ever-rainy Vancouver, BC, I&apos;ve found myself caught in a love triangle between full-stack development, artificial intelligence, and game development. It&apos;s like a techy soap opera, and I&apos;m here for all the drama!</p>
+                <button onClick={()=>console.log('connect')}>Interest Me?</button>
+              </Col>
+            </Row>
+          </Container>
         </section>
 
-        <div>
+
+
+        <div className='banner'>
           <h3 className='text-3xl'>
             Projects:
           </h3>
         </div>
-        <div className='grid lg:grid-cols-2 gap-10'>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-4 p-4'>
           {/* Full Stack Development */}
           <div className='shadow-lg p-10 rounded-xl my-10'>
-            <AiFillGithub className='text-xl'/>
+            <a href="https://github.com/gprem09/Fullstack-Web-Development" target="_blank" rel="noopener noreferrer">
+              <AiFillGithub className='text-xl'/>
+            </a>
             <h3 className='text-center text-lg font-medium pt-8 pb-2 text-teal-500'>
               Full Stack Development
             </h3>
@@ -79,7 +114,9 @@ export default function Home() {
 
           {/* Angular Web Development */}
           <div className='shadow-lg p-10 rounded-xl my-10'>
-            <AiFillGithub className='text-xl'/>
+            <a href="https://github.com/gprem09/Pig-Report-Angular" target="_blank" rel="noopener noreferrer">
+              <AiFillGithub className='text-xl'/>
+            </a>
             <h3 className='text-center text-lg font-medium pt-8 pb-2 text-teal-500'>
               Angular Web Development
             </h3>
@@ -99,7 +136,9 @@ export default function Home() {
 
           {/* 2d-Arcade Game */}
           <div className='shadow-lg p-10 rounded-xl my-10'>
-            <AiFillGithub className='text-xl'/>
+            <a href="https://github.com/gprem09/2d-Arcade-Java-Game" target="_blank" rel="noopener noreferrer">
+              <AiFillGithub className='text-xl'/>
+            </a>
             <h3 className='text-center text-lg font-medium pt-8 pb-2 text-teal-500'>
               2D-Arcade Game
             </h3>
@@ -119,9 +158,11 @@ export default function Home() {
 
           {/* cShell */}
           <div className='shadow-lg p-10 rounded-xl my-10'>
-            <AiFillGithub className='text-xl'/>
+            <a href="https://github.com/gprem09/myShell" target="_blank" rel="noopener noreferrer">
+              <AiFillGithub className='text-xl'/>
+            </a>
             <h3 className='text-center text-lg font-medium pt-8 pb-2 text-teal-500'>
-              cShell
+              myShell
             </h3>
             <p className='py-2'>
               In January 2022, I developed a custom C-based shell, myShell, that facilitates command execution, environment variable management, and command history logging. This project demonstrated my skills in system programming and my ability to apply complex C and UNIX system call concepts, such as process forking, piping, and efficient memory management. I prioritized security by implementing robust error handling and password protection for sensitive operations. Additionally, I enhanced user experience by allowing dynamic theme color adjustments, adding a layer of personalization to the shell interface.
@@ -136,7 +177,9 @@ export default function Home() {
 
           {/* NoteTaking App */}
           <div className='shadow-lg p-10 rounded-xl my-10'>
-            <AiFillGithub className='text-xl'/>
+            <a href="https://github.com/gprem09/Docker-CRUD-App" target="_blank" rel="noopener noreferrer">
+              <AiFillGithub className='text-xl'/>
+            </a>
             <h3 className='text-center text-lg font-medium pt-8 pb-2 text-teal-500'>
               Note-Taking App
             </h3>
@@ -162,7 +205,7 @@ export default function Home() {
               Arduino Gesture Control Car
             </h3>
             <p className='py-2'>
-              In December 2019, I worked on an embedded systems project to create a gesture-controlled car using Arduino, showcasing my skills in electronics. This innovative project involved developing a system that recognizes finger gestures to command the car&apos;s movement, allowing for an intuitive driving experience. I programmed in C++ within the Arduino IDE, which was crucial for the seamless integration of the hardware and software, resulting in a responsive and precise control mechanism. This work highlighted the exciting possibilities for enhancing human-machine interaction, specifically in the realm of vehicular control.
+              In December 2019, I worked on an embedded systems project to create a gesture-controlled car using Arduino, showcasing my skills in electronics. This innovative project involved developing a system that recognizes finger gestures to command the cars movement, allowing for an intuitive driving experience. I programmed in C++ within the Arduino IDE, which was crucial for the seamless integration of the hardware and software, resulting in a responsive and precise control mechanism. This work highlighted the exciting possibilities for enhancing human-machine interaction, specifically in the realm of vehicular control.
             </p>
             <h4 className='text-center py-4 text-teal-500'>
               Main Programming languages and tools used:
