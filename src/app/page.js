@@ -51,6 +51,7 @@ export default function Home() {
           </h3>
         </div>
         <div className='grid lg:grid-cols-2 gap-10'>
+          {/* Full Stack Development */}
           <div className='shadow-lg p-10 rounded-xl my-10'>
             <AiFillGithub className='text-xl'/>
             <h3 className='text-center text-lg font-medium pt-8 pb-2 text-teal-500'>
@@ -71,10 +72,11 @@ export default function Home() {
               </div>
           </div>
 
+          {/* Angular Web Development */}
           <div className='shadow-lg p-10 rounded-xl my-10'>
             <AiFillGithub className='text-xl'/>
             <h3 className='text-center text-lg font-medium pt-8 pb-2 text-teal-500'>
-              Angular Project
+              Angular Web Development
             </h3>
             <p className='py-2'>
               In March 2021, I developed a dynamic Angular web application that allowed the public to report and monitor missing pigs effectively. This platform offers enhanced engagement and functionality through interactive features. With CRUD operations, JSON libraries, and REST APIs, the app manages data on a web server seamlessly. I integrated the Leaflet maps API to help users filter reports, interact with map markers, and obtain a detailed view of pig sightings. The application includes well-designed forms for easy report submission and smart feedback systems for handling user errors, ensuring an intuitive and smooth user experience.
@@ -89,7 +91,43 @@ export default function Home() {
                 <p className='py-1'>TypeScript</p>
               </div>
           </div>
-        
+
+          {/* 2d-Arcade Game */}
+          <div className='shadow-lg p-10 rounded-xl my-10'>
+            <AiFillGithub className='text-xl'/>
+            <h3 className='text-center text-lg font-medium pt-8 pb-2 text-teal-500'>
+              2D-Arcade Game
+            </h3>
+            <p className='py-2'>
+              In September 2021, I led a group project to develop a 2D arcade game named "Spirit Experiment". We applied Java Swing and Graphics2D to create a visually engaging and responsive game engine. We adopted Agile Scrum methodologies, such as sprint planning, daily stand-ups, and retrospectives, which enhanced our workflow and project management. To ensure the reliability of our game logic and mechanics, we utilized JUnit and Junit.jupiter for thorough unit testing, aiming for a bug-free user experience. The combination of these practices contributed to the successful delivery of a robust and enjoyable 2D arcade gaming experience.
+            </p>
+            <h4 className='text-center py-4 text-teal-500'>
+              Main Programming languages and tools used:
+            </h4>
+              <div className='flex justify-between'>
+                <p className='py-1'>Java</p>
+                <p className='py-1'>Maven</p>
+                <p className='py-1'>JUnit</p>
+                <p className='py-1'>Swing (GUI)</p>
+              </div>
+          </div>
+
+          {/* cShell */}
+          <div className='shadow-lg p-10 rounded-xl my-10'>
+            <AiFillGithub className='text-xl'/>
+            <h3 className='text-center text-lg font-medium pt-8 pb-2 text-teal-500'>
+              cShell
+            </h3>
+            <p className='py-2'>
+              In January 2022, I developed a custom C-based shell, myShell, that facilitates command execution, environment variable management, and command history logging. This project demonstrated my skills in system programming and my ability to apply complex C and UNIX system call concepts, such as process forking, piping, and efficient memory management. I prioritized security by implementing robust error handling and password protection for sensitive operations. Additionally, I enhanced user experience by allowing dynamic theme color adjustments, adding a layer of personalization to the shell interface.
+            </p>
+            <h4 className='text-center py-4 text-teal-500'>
+              Main Programming languages and tools used:
+            </h4>
+              <div className='flex justify-center'>
+                <p className='py-1'>C Language</p>
+              </div>
+          </div>
         </div>
       </section>
 
