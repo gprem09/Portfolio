@@ -454,9 +454,12 @@ export default function Home() {
           </div>
 
         </div>
-      </section>
 
-      
+        <div className='text-center textColor p-10'>
+          <p className='py-2' style={{ fontSize: '12px' }}>Built and designed by Gnanavel Premnath.</p>
+          <p style={{ fontSize: '12px' }}>All rights reserved. ©</p>
+        </div>
+      </section>
 
     
     </main>
