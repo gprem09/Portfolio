@@ -1,14 +1,51 @@
 "use client";
 
 import Image from 'next/image'
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback, Fragment } from 'react';
 import {BsFillMoonStarsFill} from 'react-icons/bs'
 import {AiFillLinkedin, AiFillMail, AiFillGithub} from 'react-icons/ai'
 import DarkModeToggle from './DarkModeToggle'
 import { Col, Container, Row } from 'react-bootstrap';
-
+import { Dialog, Transition } from '@headlessui/react';
 
 export default function Home() {
+  const [isFullStackModalOpen, setFullStackModalOpen] = useState(false);
+  const [isAngularModalOpen, setAngularModalOpen] = useState(false);
+  const [is2DModalOpen, set2DModalOpen] = useState(false);
+  const [isNoteModalOpen, setNoteModalOpen] = useState(false);
+
+  const openFullStackModal = () => {
+    setFullStackModalOpen(true);
+  };
+
+  const closeFullStackModal = () => {
+    setFullStackModalOpen(false);
+  };
+
+  const openAngularModal = () => {
+    setAngularModalOpen(true);
+  };
+
+  const closeAngularModal = () => {
+    setAngularModalOpen(false);
+  };
+
+  const open2DModal = () => {
+    set2DModalOpen(true);
+  };
+
+  const close2DModal = () => {
+    set2DModalOpen(false);
+  };
+
+  const openNoteModal = () => {
+    setNoteModalOpen(true);
+  };
+
+  const closeNoteModal = () => {
+    setNoteModalOpen(false);
+  };
+
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -103,13 +140,42 @@ export default function Home() {
             <h4 className='text-center py-4 text-teal-500'>
               Main Programming languages and tools used:
             </h4>
-              <div className='flex justify-between'>
+              <div className='flex justify-center gap-4'>
                 <p className='py-1'>JavaScript</p>
                 <p className='py-1'>MongoDB</p>
-                <p className='py-1'>Express</p>
-                <p className='py-1'>Angular</p>
-                <p className='py-1'>NodeJS</p>
+                <button 
+                  className='text-teal-500 hover:text-teal-700 transition duration-300' 
+                  onClick={openFullStackModal}>
+                  Show More
+              </button>
               </div>
+              
+
+              <Transition appear show={isFullStackModalOpen} as={Fragment}>
+                <Dialog as="div" className="fixed inset-0 z-10 overflow-y-auto" onClose={closeFullStackModal}>
+                  <div className="min-h-screen px-4 text-center">
+                    <Dialog.Overlay className="fixed inset-0 bg-black opacity-30" />
+                    
+                    <span className="inline-block h-screen align-middle" aria-hidden="true">&#8203;</span>
+                    
+                    <div className="inline-block p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
+                      <Dialog.Title as="h3" className="text-lg font-medium leading-6 text-gray-900">
+                        Additional:
+                      </Dialog.Title>
+                      <div className="mt-2">
+                        <p className='py-1 text-black'>Express</p>
+                        <p className='py-1 text-black'>Angular</p>
+                        <p className='py-1 text-black'>NodeJS</p>
+                      </div>
+                      <div className="mt-4">
+                        <button type="button" className="text-teal-500 hover:text-teal-700" onClick={closeFullStackModal}>
+                          Close
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </Dialog>
+              </Transition>
           </div>
 
           {/* Angular Web Development */}
@@ -126,12 +192,40 @@ export default function Home() {
             <h4 className='text-center py-4 text-teal-500'>
               Main Programming languages and tools used:
             </h4>
-              <div className='flex justify-between'>
+              <div className='flex justify-center gap-4'>
                 <p className='py-1'>Angular</p>
-                <p className='py-1'>HTML</p>
-                <p className='py-1'>CSS</p>
                 <p className='py-1'>TypeScript</p>
+                <button 
+                  className='text-teal-500 hover:text-teal-700 transition duration-300' 
+                  onClick={openAngularModal}>
+                  Show More
+                </button>
               </div>
+              <Transition appear show={isAngularModalOpen} as={Fragment}>
+                <Dialog as="div" className="fixed inset-0 z-10 overflow-y-auto" onClose={closeAngularModal}>
+                  <div className="min-h-screen px-4 text-center">
+                    <Dialog.Overlay className="fixed inset-0 bg-black opacity-30" />
+                    
+                    <span className="inline-block h-screen align-middle" aria-hidden="true">&#8203;</span>
+                    
+                    <div className="inline-block p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
+                      <Dialog.Title as="h3" className="text-lg font-medium leading-6 text-gray-900">
+                        Additional:
+                      </Dialog.Title>
+                      <div className="mt-2">
+                        <p className='py-1 text-black'>HTML</p>
+                        <p className='py-1 text-black'>CSS</p>
+                      </div>
+                      <div className="mt-4">
+                        <button type="button" className="text-teal-500 hover:text-teal-700" onClick={closeAngularModal}>
+                          Close
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </Dialog>
+              </Transition>
+
           </div>
 
           {/* 2d-Arcade Game */}
@@ -148,12 +242,39 @@ export default function Home() {
             <h4 className='text-center py-4 text-teal-500'>
               Main Programming languages and tools used:
             </h4>
-              <div className='flex justify-between'>
+              <div className='flex justify-center gap-4'>
                 <p className='py-1'>Java</p>
                 <p className='py-1'>Maven</p>
-                <p className='py-1'>JUnit</p>
-                <p className='py-1'>Swing (GUI)</p>
+                <button 
+                  className='text-teal-500 hover:text-teal-700 transition duration-300' 
+                  onClick={open2DModal}>
+                  Show More
+                </button>
               </div>
+              <Transition appear show={is2DModalOpen} as={Fragment}>
+                <Dialog as="div" className="fixed inset-0 z-10 overflow-y-auto" onClose={close2DModal}>
+                  <div className="min-h-screen px-4 text-center">
+                    <Dialog.Overlay className="fixed inset-0 bg-black opacity-30" />
+                    
+                    <span className="inline-block h-screen align-middle" aria-hidden="true">&#8203;</span>
+                    
+                    <div className="inline-block p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
+                      <Dialog.Title as="h3" className="text-lg font-medium leading-6 text-gray-900">
+                        Additional:
+                      </Dialog.Title>
+                      <div className="mt-2">
+                        <p className='py-1 text-black'>JUnit</p>
+                        <p className='py-1 text-black'>Swing (GUI)</p>
+                      </div>
+                      <div className="mt-4">
+                        <button type="button" className="text-teal-500 hover:text-teal-700" onClick={close2DModal}>
+                          Close
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </Dialog>
+              </Transition>
           </div>
 
           {/* cShell */}
@@ -189,13 +310,41 @@ export default function Home() {
             <h4 className='text-center py-4 text-teal-500'>
               Main Programming languages and tools used:
             </h4>
-            <div className='flex justify-between'>
+            <div className='flex justify-center gap-4'>
                 <p className='py-1'>JavaScript</p>
-                <p className='py-1'>Embedded JS</p>
-                <p className='py-1'>MongoDB</p>
-                <p className='py-1'>Express</p>
                 <p className='py-1'>Docker</p>
+                <button 
+                  className='text-teal-500 hover:text-teal-700 transition duration-300' 
+                  onClick={openNoteModal}>
+                  Show More
+                </button>
               </div>
+
+              <Transition appear show={isNoteModalOpen} as={Fragment}>
+                <Dialog as="div" className="fixed inset-0 z-10 overflow-y-auto" onClose={closeNoteModal}>
+                  <div className="min-h-screen px-4 text-center">
+                    <Dialog.Overlay className="fixed inset-0 bg-black opacity-30" />
+                    
+                    <span className="inline-block h-screen align-middle" aria-hidden="true">&#8203;</span>
+                    
+                    <div className="inline-block p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
+                      <Dialog.Title as="h3" className="text-lg font-medium leading-6 text-gray-900">
+                        Additional:
+                      </Dialog.Title>
+                      <div className="mt-2">
+                        <p className='py-1 text-black'>Express</p>
+                        <p className='py-1 text-black'>MongoDB</p>
+                        <p className='py-1 text-black'>Embedded JS</p>
+                      </div>
+                      <div className="mt-4">
+                        <button type="button" className="text-teal-500 hover:text-teal-700" onClick={closeNoteModal}>
+                          Close
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </Dialog>
+              </Transition>
           </div>
 
           {/* Arduino Gesture Control Car */}

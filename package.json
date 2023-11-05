@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
+    "@headlessui/react": "^1.7.17",
     "bootstrap": "^5.3.2",
     "next": "14.0.1",
     "react": "^18",
