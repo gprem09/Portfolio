@@ -2,8 +2,8 @@
 
 import Image from 'next/image'
 import { useEffect, useState, useCallback, Fragment } from 'react';
-import {BsFillMoonStarsFill} from 'react-icons/bs'
-import {AiFillLinkedin, AiFillMail, AiFillGithub, AiOutlineEllipsis, AiOutlineMenu} from 'react-icons/ai'
+import {AiFillLinkedin, AiFillMail, AiFillGithub, AiOutlineEllipsis, AiOutlineMenu, AiFillFolderOpen} from 'react-icons/ai'
+import { VscSymbolNumeric } from "react-icons/vsc";
 import DarkModeToggle from './DarkModeToggle'
 import { Col, Container, Row } from 'react-bootstrap';
 import { Dialog, Transition } from '@headlessui/react';
@@ -46,7 +46,8 @@ export default function Home() {
     setNoteModalOpen(false);
   };
 
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [shouldBlink, setShouldBlink] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const toRotate = ["Software", "Web", "Game"];
@@ -67,9 +68,11 @@ export default function Home() {
 
     if (!isDeleting && updatedText === fullText) {
       setIsDeleting(true);
+      setShouldBlink(true);
       setDelta(period);
     } else if (isDeleting && updatedText === '') {
       setIsDeleting(false);
+      setShouldBlink(false);
       setLoopNum(loopNum + 1);
       setDelta(500);
     }
@@ -81,10 +84,10 @@ export default function Home() {
   }, [tick, delta]);
 
   return (
-    <main className={`md:px-20 lg:px-20 px-10 transition ${isDarkMode ? 'bg-teal-950 text-white' : 'bg-white text-black'}`}>
+    <main className={`md:px-20 lg:px-20 px-10 transition ${isDarkMode ? 'bg-custom-gradient text-white' : 'bg-white text-black'}`}>
       <section className="min-h-screen">
         <nav className='py-10 mb-12 flex justify-between'>
-          <div className='flex item-center gap-8'>
+          <div className='flex item-center gap-8 text-custom-cyan'>
             <AiFillLinkedin className='text-2xl'/>
             <AiFillMail className='text-2xl'/>
             <AiFillGithub className='text-2xl'/>
@@ -98,23 +101,27 @@ export default function Home() {
               />
             </li>
             <li>
-              <a className='px-6 py-4 ml-8' href="https://tmpfiles.org/dl/3065132/gnanavel_premnath_resume.pdf" target="_blank" rel="Resume">Resume</a>
+              <a className='px-6 py-4 ml-8 text-custom-cyan hover:text-white' href="https://tmpfiles.org/dl/3065132/gnanavel_premnath_resume.pdf" target="_blank" rel="Resume">Resume</a>
             </li>
           </ul>
         </nav>
 
-        <p className="left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl">
-          (Portfolio is incomplete) Sorry, it is Unfinished! Will be ready by November 5, 2023
-        </p>
+
 
         <section className='banner' id='home'>
           <Container>
-            <Row className='text-center'>
+            <Row>
               <Col xs={12} md={6} xl={7}>
-                <h1>Hi I&apos;m Gnanavel Premnath</h1>
-                <h2>Am I <span className='wrap'>{text}</span> Developer?</h2>
-                <p>Navigating the wild world of Computer Science at Simon Fraser University in the ever-rainy Vancouver, BC, I&apos;ve found myself caught in a love triangle between full-stack development, artificial intelligence, and game development. It&apos;s like a techy soap opera, and I&apos;m here for all the drama!</p>
-                <button onClick={()=>console.log('connect')}>Interest Me?</button>
+                <h1>Hi, I&apos;m <span className='text-custom-cyan fonts'>Gnanavel</span> Premnath</h1>
+
+                <h2>
+                <VscSymbolNumeric style={{ display: 'inline-block' }} /> Am I <span className='wrap text-custom-cyan fonts'>
+                    {text}
+                    <span className={`cursor ${shouldBlink ? 'blinking-cursor' : ''}`}>|</span>
+                  </span> Developer?
+                </h2>
+                
+                <p>Exploring the world of Computer Science at Simon Fraser University in the ever-rainy Vancouver, BC, I&apos;ve found myself caught in a love triangle between full-stack development, artificial intelligence, and game development. It&apos;s like a techy soap opera, and I&apos;m here for all the drama!</p>
               </Col>
             </Row>
           </Container>
@@ -130,9 +137,12 @@ export default function Home() {
         <div className='grid grid-cols-1 md:grid-cols-2 gap-4 p-4'>
           {/* Full Stack Development */}
           <div className='shadow-lg p-10 rounded-xl my-10 hover:bg-white hover:bg-opacity-10 transition duration-300'>
-            <a href="https://github.com/gprem09/Fullstack-Web-Development" target="_blank" rel="noopener noreferrer">
-              <AiFillGithub className='text-xl'/>
-            </a>
+            <div className='flex justify-between'>
+              <a href="https://github.com/gprem09/Fullstack-Web-Development" target="_blank" rel="noopener noreferrer">
+                <AiFillGithub className='text-xl'/>
+              </a>
+              <AiFillFolderOpen className='text-xl'/>
+            </div>
             <h3 className='text-center text-lg font-medium pt-8 pb-2 text-teal-500'>
               Full Stack Development
             </h3>
@@ -185,9 +195,12 @@ export default function Home() {
 
           {/* Angular Web Development */}
           <div className='shadow-lg p-10 rounded-xl my-10 hover:bg-white hover:bg-opacity-10 transition duration-300'>
-            <a href="https://github.com/gprem09/Pig-Report-Angular" target="_blank" rel="noopener noreferrer">
-              <AiFillGithub className='text-xl'/>
-            </a>
+            <div className='flex justify-between'>
+              <a href="https://github.com/gprem09/Pig-Report-Angular" target="_blank" rel="noopener noreferrer">
+                <AiFillGithub className='text-xl'/>
+              </a>
+              <AiFillFolderOpen className='text-xl'/>
+            </div>
             <h3 className='text-center text-lg font-medium pt-8 pb-2 text-teal-500'>
               Angular Web Development
             </h3>
@@ -236,9 +249,12 @@ export default function Home() {
 
           {/* 2d-Arcade Game */}
           <div className='shadow-lg p-10 rounded-xl my-10 hover:bg-white hover:bg-opacity-10 transition duration-300'>
-            <a href="https://github.com/gprem09/2d-Arcade-Java-Game" target="_blank" rel="noopener noreferrer">
-              <AiFillGithub className='text-xl'/>
-            </a>
+            <div className='flex justify-between'>
+              <a href="https://github.com/gprem09/2d-Arcade-Java-Game" target="_blank" rel="noopener noreferrer">
+                <AiFillGithub className='text-xl'/>
+              </a>
+              <AiFillFolderOpen className='text-xl'/>
+            </div>
             <h3 className='text-center text-lg font-medium pt-8 pb-2 text-teal-500'>
               2D-Arcade Game
             </h3>
@@ -286,9 +302,12 @@ export default function Home() {
 
           {/* cShell */}
           <div className='shadow-lg p-10 rounded-xl my-10 hover:bg-white hover:bg-opacity-10 transition duration-300'>
-            <a href="https://github.com/gprem09/myShell" target="_blank" rel="noopener noreferrer">
-              <AiFillGithub className='text-xl'/>
-            </a>
+            <div className='flex justify-between'>
+              <a href="https://github.com/gprem09/myShell" target="_blank" rel="noopener noreferrer">
+                <AiFillGithub className='text-xl'/>
+              </a>
+              <AiFillFolderOpen className='text-xl'/>
+            </div>
             <h3 className='text-center text-lg font-medium pt-8 pb-2 text-teal-500'>
               myShell
             </h3>
@@ -305,9 +324,12 @@ export default function Home() {
 
           {/* NoteTaking App */}
           <div className='shadow-lg p-10 rounded-xl my-10 hover:bg-white hover:bg-opacity-10 transition duration-300'>
-            <a href="https://github.com/gprem09/Docker-CRUD-App" target="_blank" rel="noopener noreferrer">
-              <AiFillGithub className='text-xl'/>
-            </a>
+            <div className='flex justify-between'>
+              <a href="https://github.com/gprem09/Docker-CRUD-App" target="_blank" rel="noopener noreferrer">
+                <AiFillGithub className='text-xl'/>
+              </a>
+              <AiFillFolderOpen className='text-xl'/>
+            </div>
             <h3 className='text-center text-lg font-medium pt-8 pb-2 text-teal-500'>
               Note-Taking App
             </h3>
@@ -357,7 +379,10 @@ export default function Home() {
 
           {/* Arduino Gesture Control Car */}
           <div className='shadow-lg p-10 rounded-xl my-10 hover:bg-white hover:bg-opacity-10 transition duration-300'>
-            <AiFillGithub className='text-xl'/>
+            <div className='flex justify-between'>
+              <AiFillGithub className='text-xl'/>
+              <AiFillFolderOpen className='text-xl'/>
+            </div>
             <h3 className='text-center text-lg font-medium pt-8 pb-2 text-teal-500'>
               Arduino Gesture Control Car
             </h3>

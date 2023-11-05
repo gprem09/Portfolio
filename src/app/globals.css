@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Leoscar';
+  src: url('/public/fonts/Leoscar.ttf');
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -45,63 +50,63 @@ body {
 
 .banner {
   margin-top: 0;
-  padding: 180px 0 100px 0;
-  background-position: top center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  padding: 150px 0 100px 0;
 }
-.banner .tagline {
-  font-weight: 700;
-  letter-spacing: 0.8px;
-  padding: 8px 10px;
-  font-size: 20px;
-  margin-bottom: 16px;
-  display: inline-block;
-}
+
 .banner h1 {
+  color: #CBD7F6;
+  padding-bottom: 25px;
   font-size: 65px;
   font-weight: 700;
+  line-height: 1;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.banner h2 {
+  color: #8793AF;
+  font-size: 50px;
   letter-spacing: 0.8px;
   line-height: 1;
   margin-bottom: 20px;
   display: block;
 }
+
 .banner p {
+  color: #5C6883;
+  padding-top: 50px;
   font-size: 18px;
-  letter-spacing: 0.8px;
   line-height: 1.5em;
-  width: 96%;
-}
-.banner button {
-  color: teal;
-  font-weight: 700;
-  font-size: 20px;
-  align-items: center;
-}
-.banner button svg {
-  font-size: 25px;
-  margin-left: 10px;
-  transition: 0.3s ease-in-out;
-  line-height: 1;
-}
-.banner button:hover svg {
-  margin-left: 25px;
-}
-.banner img {
-  animation: updown 3s linear infinite;
-}
-@keyframes updown {
-    0% {
-        transform: translateY(-20px);
-    }
-    50% {
-        transform: translateY(20px);
-    }
-    100% {
-        transform: translateY(-20px);
-    }
-}
-.txt-rotate > .wrap {
-  border-right: 0.08em solid #666;
+  width: 60%;
 }
 
+@keyframes blink {
+  0% {opacity: 0;}
+  50% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+.blinking-cursor {
+  display: inline-block;
+  animation: blink 1.2s linear infinite;
+}
+
+.cursor {
+  font-weight: 200; 
+  opacity: 0.6; 
+  font-size: 0.8em;  
+  content: '|';
+}
+
+.bg-custom-gradient {
+  background: rgb(10,25,47);
+  background: linear-gradient(0deg, rgba(10,25,47,1) 0%, rgba(10,25,47,1) 100%);
+}
+
+.text-custom-cyan {
+  color: #65FFDA;
+}
+
+.fonts{
+  font-family: 'leoscar';
+}
