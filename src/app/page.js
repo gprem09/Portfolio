@@ -112,7 +112,7 @@ export default function Home() {
               />
             </li>
             <li>
-              <a className={`px-6 py-4 ml-8 transition ${!isDarkMode ? 'bg-color-text' : 'text-custom-cyan'} hover:text-white`} 
+              <a className={`px-6 py-4 ml-8 transition ${!isDarkMode ? 'bg-color-text' : 'text-custom-cyan'} hover:text-teal-700`} 
                 href='/Gnanavel_Premnath_Resume.pdf' 
                 target="_blank" 
                 rel="noopener noreferrer" 
@@ -125,11 +125,11 @@ export default function Home() {
 
 
 
-        <section className='banner' id='home'>
+        <section className={`banner ${!isDarkMode ? 'light-mode' : ''}`} id='home'>
           <Container>
             <Row>
               <Col xs={12} md={6} xl={7}>
-                <h1>Hi, I&apos;m <span className={`fonts transition ${!isDarkMode ? 'bg-color-text' : 'text-custom-cyan'}`}>Gnanavel</span> Premnath<span className='text-custom-cyan p-1'>;</span></h1>
+                <h1>Hi, I&apos;m <span className={`fonts transition ${!isDarkMode ? 'bg-color-text' : 'text-custom-cyan'}`}>Gnanavel</span> Premnath<span className={`p-1 ${!isDarkMode ? 'bg-color-text' : 'text-custom-cyan'}`}>;</span></h1>
 
                 <h2>
                 <VscSymbolNumeric style={{ display: 'inline-block' }} /> Am I <span className={`wrap fonts transition ${!isDarkMode ? 'bg-color-text' : 'text-custom-cyan'}`}>
@@ -149,11 +149,11 @@ export default function Home() {
         <section className='aboutMe'>
           <div>
 
-            <p className='titleColor py-5 paraWidth'>
+            <p className={`py-5 paraWidth ${!isDarkMode ? 'textColor' : 'titleColor'}`}>
               I am currently in my 3rd year at Simon Fraser University, diligently working towards completing my degree. Immersed in a dynamic academic environment, I am passionate about making the most of my educational journey and exploring new opportunities that come my way.
             </p>
 
-            <p className='titleColor py-4'>Here are some languages that I am currently working with;</p>
+            <p className={`py-4 paraWidth ${!isDarkMode ? 'textColor' : 'titleColor'}`}>Here are some languages that I am currently working with;</p>
 
             <div style={{
               display: 'grid',
@@ -163,13 +163,13 @@ export default function Home() {
             }}>
               {skills.map((skill, index) => (
                 <div key={index} style={{ display: 'flex', alignItems: 'center', color: '#8793AF' }}>
-                  <BiArrowToRight style={{ marginRight: '5px', color: '#65FFDA' }} />
+                  <BiArrowToRight style={{ marginRight: '5px', color: !isDarkMode ? 'rgb(10,25,47)' : '#65FFDA' }} />
                   {skill}
                 </div>
               ))}
             </div>
             
-            <p className='titleColor py-5'>When I&apos;m not working, I like to spend my time;</p>
+            <p className={`py-5 paraWidth ${!isDarkMode ? 'textColor' : 'titleColor'}`}>When I&apos;m not working, I like to spend my time;</p>
 
             <div style={{
               display: 'grid',
@@ -179,7 +179,7 @@ export default function Home() {
             }}>
               {hobbies.map((hobby, index) => (
                 <div key={index} style={{ display: 'flex', alignItems: 'center', color: '#8793AF' }}>
-                  <BiArrowToRight style={{ marginRight: '5px', color: '#65FFDA' }} />
+                  <BiArrowToRight style={{ marginRight: '5px', color: !isDarkMode ? 'rgb(10,25,47)' : '#65FFDA' }} />
                   {hobby}
                 </div>
               ))}
@@ -215,8 +215,8 @@ export default function Home() {
                   className='text-teal-500 hover:text-teal-700 transition duration-300' 
                   onClick={openFullStackModal}>
                   
-                  <span className='hidden md:inline text-custom-cyan'>Show More</span>
-                  <AiOutlineEllipsis className='text-2xl text-custom-cyan md:hidden'/>
+                  <span className={`hidden md:inline ${!isDarkMode ? '' : 'text-custom-cyan'}`} style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>Show More</span>
+                  <AiOutlineEllipsis className={`text-2xl md:hidden ${!isDarkMode ? '' : 'text-custom-cyan'}`} style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }} />
 
                 </button>
               </div>
@@ -272,8 +272,8 @@ export default function Home() {
                 <button 
                   className='text-teal-500 hover:text-teal-700 transition duration-300' 
                   onClick={openAngularModal}>
-                  <span className='hidden md:inline text-custom-cyan'>Show More</span>
-                  <AiOutlineEllipsis className='text-2xl text-custom-cyan md:hidden'/>
+                  <span className={`hidden md:inline ${!isDarkMode ? '' : 'text-custom-cyan'}`} style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>Show More</span>
+                  <AiOutlineEllipsis className={`text-2xl md:hidden ${!isDarkMode ? '' : 'text-custom-cyan'}`} style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }} />
                 </button>
               </div>
               <Transition appear show={isAngularModalOpen} as={Fragment}>
@@ -326,8 +326,8 @@ export default function Home() {
                 <button 
                   className='text-teal-500 hover:text-teal-700 transition duration-300' 
                   onClick={open2DModal}>
-                  <span className='hidden md:inline text-custom-cyan'>Show More</span>
-                  <AiOutlineEllipsis className='text-2xl text-custom-cyan md:hidden'/>
+                  <span className={`hidden md:inline ${!isDarkMode ? '' : 'text-custom-cyan'}`} style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>Show More</span>
+                  <AiOutlineEllipsis className={`text-2xl md:hidden ${!isDarkMode ? '' : 'text-custom-cyan'}`} style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }} />
                 </button>
               </div>
               <Transition appear show={is2DModalOpen} as={Fragment}>
@@ -401,8 +401,8 @@ export default function Home() {
                 <button 
                   className='text-custom-cyan hover:text-teal-900 transition duration-300' 
                   onClick={openNoteModal}>
-                  <span className='hidden md:inline'>Show More</span>
-                  <AiOutlineEllipsis className='text-2xl text-custom-cyan md:hidden'/>
+                  <span className={`hidden md:inline ${!isDarkMode ? '' : 'text-custom-cyan'}`} style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>Show More</span>
+                  <AiOutlineEllipsis className={`text-2xl md:hidden ${!isDarkMode ? '' : 'text-custom-cyan'}`} style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }} />
                 </button>
               </div>
 

@@ -78,6 +78,10 @@ body {
   display: block;
 }
 
+.banner.light-mode h1 {
+  color: #8793AF;
+}
+
 .banner h2 {
   color: #8793AF;
   font-size: 50px;
@@ -131,8 +135,12 @@ body {
 }
 
 .bg-custom-gradient {
-  background: rgb(10,25,47);
-  background: linear-gradient(0deg, rgba(10,25,47,1) 0%, rgba(10,25,47,1) 100%);
+  background-color:hsla(217,62%,14%,1);
+  background-image:
+  radial-gradient(at 92% 98%, hsla(217,21%,39%,1) 0px, transparent 50%),
+  radial-gradient(at 72% 96%, hsla(262,46%,28%,1) 0px, transparent 50%),
+  radial-gradient(at 32% 95%, hsla(358,20%,37%,1) 0px, transparent 50%),
+  radial-gradient(at 1% 100%, hsla(238,0%,56%,1) 0px, transparent 50%);
 }
 
 .text-custom-cyan {
