@@ -58,6 +58,11 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+.aboutMe{
+  margin-top: 0;
+  padding: 150px 0 100px 0;
+}
+
 .banner {
   margin-top: 0;
   padding: 150px 0 100px 0;
@@ -88,6 +93,19 @@ body {
   font-size: 18px;
   line-height: 1.5em;
   width: 60%;
+}
+
+.paraWidth {
+  width: 60%;
+}
+
+@media (max-width: 768px) {
+  .banner p {
+    width: 90%; 
+  }
+  .paraWidth {
+    width: 90%;
+  }
 }
 
 @keyframes blink {

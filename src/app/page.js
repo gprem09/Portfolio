@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import { useEffect, useState, useCallback, Fragment } from 'react';
 import {AiFillLinkedin, AiFillMail, AiFillGithub, AiOutlineEllipsis, AiOutlineMenu, AiFillFolderOpen} from 'react-icons/ai'
+import { BiArrowToRight } from "react-icons/bi";
 import { VscSymbolNumeric } from "react-icons/vsc";
 import DarkModeToggle from './DarkModeToggle'
 import { Col, Container, Row } from 'react-bootstrap';
@@ -13,6 +14,16 @@ export default function Home() {
   const [isAngularModalOpen, setAngularModalOpen] = useState(false);
   const [is2DModalOpen, set2DModalOpen] = useState(false);
   const [isNoteModalOpen, setNoteModalOpen] = useState(false);
+  const skills = [
+    'Next.js', 'React.js', 'Node.js', 
+    'Angular', 'JavaScript', 'HTML & CSS', 'Tailwind CSS',
+    'C++', 'Python'
+  ];
+
+  const hobbies = [
+    'Video editing', 'Photo editing', 'VFX',
+    'Listen podcast', 'Table tennis', 'Eating ;)'
+  ];
 
   const openFullStackModal = () => {
     setFullStackModalOpen(true);
@@ -132,6 +143,52 @@ export default function Home() {
             </Row>
           </Container>
         </section>
+
+
+
+        <section className='aboutMe'>
+          <div>
+
+            <p className='titleColor py-5 paraWidth'>
+              I am currently in my 3rd year at Simon Fraser University, diligently working towards completing my degree. Immersed in a dynamic academic environment, I am passionate about making the most of my educational journey and exploring new opportunities that come my way.
+            </p>
+
+            <p className='titleColor py-4'>Here are some languages that I am currently working with;</p>
+
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              gridGap: '10px', 
+              maxWidth: '600px',
+            }}>
+              {skills.map((skill, index) => (
+                <div key={index} style={{ display: 'flex', alignItems: 'center', color: '#8793AF' }}>
+                  <BiArrowToRight style={{ marginRight: '5px', color: '#65FFDA' }} />
+                  {skill}
+                </div>
+              ))}
+            </div>
+            
+            <p className='titleColor py-5'>When I&apos;m not working, I like to spend my time;</p>
+
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              gridGap: '10px', 
+              maxWidth: '600px',
+            }}>
+              {hobbies.map((hobby, index) => (
+                <div key={index} style={{ display: 'flex', alignItems: 'center', color: '#8793AF' }}>
+                  <BiArrowToRight style={{ marginRight: '5px', color: '#65FFDA' }} />
+                  {hobby}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+
+
 
         <div className='grid grid-cols-1 md:grid-cols-2 gap-4 p-4'>
           {/* Full Stack Development */}
@@ -399,12 +456,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section>
-        <div>
-          <h3 className='text-3xl py-1'>About Me</h3>
-          <p>UNDER CONSTRUCTION</p>
-        </div>
-      </section>
+      
 
     
     </main>
