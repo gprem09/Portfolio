@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import { useEffect, useState, useCallback, Fragment } from 'react';
 import {BsFillMoonStarsFill} from 'react-icons/bs'
-import {AiFillLinkedin, AiFillMail, AiFillGithub} from 'react-icons/ai'
+import {AiFillLinkedin, AiFillMail, AiFillGithub, AiOutlineEllipsis, AiOutlineMenu} from 'react-icons/ai'
 import DarkModeToggle from './DarkModeToggle'
 import { Col, Container, Row } from 'react-bootstrap';
 import { Dialog, Transition } from '@headlessui/react';
@@ -103,7 +103,9 @@ export default function Home() {
           </ul>
         </nav>
 
-
+        <p className="left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl">
+          (Portfolio is incomplete) Sorry, it is Unfinished! Will be ready by November 5, 2023
+        </p>
 
         <section className='banner' id='home'>
           <Container>
@@ -127,7 +129,7 @@ export default function Home() {
         </div>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-4 p-4'>
           {/* Full Stack Development */}
-          <div className='shadow-lg p-10 rounded-xl my-10'>
+          <div className='shadow-lg p-10 rounded-xl my-10 hover:bg-white hover:bg-opacity-10 transition duration-300'>
             <a href="https://github.com/gprem09/Fullstack-Web-Development" target="_blank" rel="noopener noreferrer">
               <AiFillGithub className='text-xl'/>
             </a>
@@ -146,8 +148,11 @@ export default function Home() {
                 <button 
                   className='text-teal-500 hover:text-teal-700 transition duration-300' 
                   onClick={openFullStackModal}>
-                  Show More
-              </button>
+                  
+                  <span className='hidden md:inline'>Show More</span>
+                  <AiOutlineEllipsis className='text-2xl text-teal-500 md:hidden'/>
+
+                </button>
               </div>
               
 
@@ -179,7 +184,7 @@ export default function Home() {
           </div>
 
           {/* Angular Web Development */}
-          <div className='shadow-lg p-10 rounded-xl my-10'>
+          <div className='shadow-lg p-10 rounded-xl my-10 hover:bg-white hover:bg-opacity-10 transition duration-300'>
             <a href="https://github.com/gprem09/Pig-Report-Angular" target="_blank" rel="noopener noreferrer">
               <AiFillGithub className='text-xl'/>
             </a>
@@ -198,7 +203,8 @@ export default function Home() {
                 <button 
                   className='text-teal-500 hover:text-teal-700 transition duration-300' 
                   onClick={openAngularModal}>
-                  Show More
+                  <span className='hidden md:inline'>Show More</span>
+                  <AiOutlineEllipsis className='text-2xl text-teal-500 md:hidden'/>
                 </button>
               </div>
               <Transition appear show={isAngularModalOpen} as={Fragment}>
@@ -229,7 +235,7 @@ export default function Home() {
           </div>
 
           {/* 2d-Arcade Game */}
-          <div className='shadow-lg p-10 rounded-xl my-10'>
+          <div className='shadow-lg p-10 rounded-xl my-10 hover:bg-white hover:bg-opacity-10 transition duration-300'>
             <a href="https://github.com/gprem09/2d-Arcade-Java-Game" target="_blank" rel="noopener noreferrer">
               <AiFillGithub className='text-xl'/>
             </a>
@@ -248,7 +254,8 @@ export default function Home() {
                 <button 
                   className='text-teal-500 hover:text-teal-700 transition duration-300' 
                   onClick={open2DModal}>
-                  Show More
+                  <span className='hidden md:inline'>Show More</span>
+                  <AiOutlineEllipsis className='text-2xl text-teal-500 md:hidden'/>
                 </button>
               </div>
               <Transition appear show={is2DModalOpen} as={Fragment}>
@@ -278,7 +285,7 @@ export default function Home() {
           </div>
 
           {/* cShell */}
-          <div className='shadow-lg p-10 rounded-xl my-10'>
+          <div className='shadow-lg p-10 rounded-xl my-10 hover:bg-white hover:bg-opacity-10 transition duration-300'>
             <a href="https://github.com/gprem09/myShell" target="_blank" rel="noopener noreferrer">
               <AiFillGithub className='text-xl'/>
             </a>
@@ -297,7 +304,7 @@ export default function Home() {
           </div>
 
           {/* NoteTaking App */}
-          <div className='shadow-lg p-10 rounded-xl my-10'>
+          <div className='shadow-lg p-10 rounded-xl my-10 hover:bg-white hover:bg-opacity-10 transition duration-300'>
             <a href="https://github.com/gprem09/Docker-CRUD-App" target="_blank" rel="noopener noreferrer">
               <AiFillGithub className='text-xl'/>
             </a>
@@ -316,7 +323,8 @@ export default function Home() {
                 <button 
                   className='text-teal-500 hover:text-teal-700 transition duration-300' 
                   onClick={openNoteModal}>
-                  Show More
+                  <span className='hidden md:inline'>Show More</span>
+                  <AiOutlineEllipsis className='text-2xl text-teal-500 md:hidden'/>
                 </button>
               </div>
 
@@ -348,7 +356,7 @@ export default function Home() {
           </div>
 
           {/* Arduino Gesture Control Car */}
-          <div className='shadow-lg p-10 rounded-xl my-10'>
+          <div className='shadow-lg p-10 rounded-xl my-10 hover:bg-white hover:bg-opacity-10 transition duration-300'>
             <AiFillGithub className='text-xl'/>
             <h3 className='text-center text-lg font-medium pt-8 pb-2 text-teal-500'>
               Arduino Gesture Control Car
