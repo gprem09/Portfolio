@@ -74,7 +74,7 @@ export default function Home() {
     setText(updatedText);
 
     if (isDeleting) {
-      setDelta(prevDelta => Math.max(prevDelta / 2, 50)); // Ensure it doesn't go too low
+      setDelta(prevDelta => Math.max(prevDelta / 2, 50)); 
     }
 
     if (!isDeleting && updatedText === fullText) {
@@ -95,14 +95,14 @@ export default function Home() {
   }, [tick, delta]);
 
   return (
-    <main className={`md:px-20 lg:px-20 px-10 transition ${isDarkMode ? 'bg-custom-gradient text-white' : 'bg-white text-black'}`}>
+    <main className={`md:px-20 lg:px-20 px-10 transition ${isDarkMode ? 'bg-custom-gradient text-white' : 'titleBg bg-color-text'}`}>
       <section className="min-h-screen">
         <nav className='py-10 mb-12 flex justify-between'>
-          <div className='flex item-center gap-8 text-custom-cyan'>
-            <AiFillLinkedin className='text-2xl'/>
-            <AiFillMail className='text-2xl'/>
-            <AiFillGithub className='text-2xl'/>
-          </div>
+        <div className={`flex items-center gap-8 transition ${!isDarkMode ? 'bg-color-text' : 'text-custom-cyan'}`}>
+          <AiFillLinkedin className='text-2xl'/>
+          <AiFillMail className='text-2xl'/>
+          <AiFillGithub className='text-2xl'/>
+        </div>
           
           <ul className='flex item-center'>
             <li>
@@ -112,7 +112,7 @@ export default function Home() {
               />
             </li>
             <li>
-              <a className='px-6 py-4 ml-8 text-custom-cyan hover:text-white' 
+              <a className={`px-6 py-4 ml-8 transition ${!isDarkMode ? 'bg-color-text' : 'text-custom-cyan'} hover:text-white`} 
                 href='/Gnanavel_Premnath_Resume.pdf' 
                 target="_blank" 
                 rel="noopener noreferrer" 
@@ -129,10 +129,10 @@ export default function Home() {
           <Container>
             <Row>
               <Col xs={12} md={6} xl={7}>
-                <h1>Hi, I&apos;m <span className='text-custom-cyan fonts'>Gnanavel</span> Premnath<span className='text-custom-cyan p-1'>;</span></h1>
+                <h1>Hi, I&apos;m <span className={`fonts transition ${!isDarkMode ? 'bg-color-text' : 'text-custom-cyan'}`}>Gnanavel</span> Premnath<span className='text-custom-cyan p-1'>;</span></h1>
 
                 <h2>
-                <VscSymbolNumeric style={{ display: 'inline-block' }} /> Am I <span className='wrap text-custom-cyan fonts'>
+                <VscSymbolNumeric style={{ display: 'inline-block' }} /> Am I <span className={`wrap fonts transition ${!isDarkMode ? 'bg-color-text' : 'text-custom-cyan'}`}>
                     {text}
                     <span className={`cursor ${shouldBlink ? 'blinking-cursor' : ''}`}>|</span>
                   </span> Developer?

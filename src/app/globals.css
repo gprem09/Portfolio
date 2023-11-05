@@ -126,6 +126,10 @@ body {
   content: '|';
 }
 
+.bg-color-text {
+  color: rgb(10,25,47);
+}
+
 .bg-custom-gradient {
   background: rgb(10,25,47);
   background: linear-gradient(0deg, rgba(10,25,47,1) 0%, rgba(10,25,47,1) 100%);
@@ -145,6 +149,10 @@ body {
 
 .titleColor{
   color: #CBD7F6;;
+}
+
+.titleBg{
+  background-color: #CBD7F6;;
 }
 
 .textColor{
