@@ -112,7 +112,7 @@ export default function Home() {
           <Container>
             <Row>
               <Col xs={12} md={6} xl={7}>
-                <h1>Hi, I&apos;m <span className='text-custom-cyan fonts'>Gnanavel</span> Premnath</h1>
+                <h1>Hi, I&apos;m <span className='text-custom-cyan fonts'>Gnanavel</span> Premnath<span className='text-custom-cyan p-1'>;</span></h1>
 
                 <h2>
                 <VscSymbolNumeric style={{ display: 'inline-block' }} /> Am I <span className='wrap text-custom-cyan fonts'>
@@ -121,7 +121,7 @@ export default function Home() {
                   </span> Developer?
                 </h2>
                 
-                <p>Exploring the world of Computer Science at Simon Fraser University in the ever-rainy Vancouver, BC, I&apos;ve found myself caught in a love triangle between full-stack development, artificial intelligence, and game development. It&apos;s like a techy soap opera, and I&apos;m here for all the drama!</p>
+                <p className='ErikasBuero'>Exploring the world of Computer Science at Simon Fraser University in the ever-rainy Vancouver, BC, I&apos;ve found myself caught in a love triangle between full-stack development, artificial intelligence, and game development. It&apos;s like a techy soap opera, and I&apos;m here for all the drama!</p>
               </Col>
             </Row>
           </Container>
@@ -146,7 +146,7 @@ export default function Home() {
             <h3 className='text-center text-lg font-medium pt-8 pb-2 text-teal-500'>
               Full Stack Development
             </h3>
-            <p className='py-2'>
+            <p className='py-2 Fragmentcore'>
             In September 2022, I designed and deployed a multimedia review platform built with the MEAN stack, aimed at improving the way users engage with movie and TV show reviews. This platform features integration with the TMDb API, which allows for easy access to movie and TV show data and lets users search for content by genre. For user security and management, the platform includes JWT for user authentication and CRUD operations. The backend is powered by MongoDB, offering a scalable database solution. The application is hosted on Google Cloud Platform to ensure it runs smoothly and can handle more users as it grows.
             </p>
             <h4 className='text-center py-4 text-teal-500'>

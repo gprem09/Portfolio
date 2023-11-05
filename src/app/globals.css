@@ -7,6 +7,16 @@
   src: url('/public/fonts/Leoscar.ttf');
 }
 
+@font-face {
+  font-family: 'Fragmentcore';
+  src: url('/public/fonts/Fragmentcore.otf');
+}
+
+@font-face {
+  font-family: 'ErikasBuero';
+  src: url('/public/fonts/ErikasBuero.ttf');
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -109,4 +119,12 @@ body {
 
 .fonts{
   font-family: 'leoscar';
+}
+
+.ErikasBuero{
+  font-family: 'ErikasBuero';
+}
+
+.Fragmentcore{
+  font-family: 'Fragmentcore';
 }
