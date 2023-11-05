@@ -125,6 +125,10 @@ body {
   font-family: 'ErikasBuero';
 }
 
-.Fragmentcore{
-  font-family: 'Fragmentcore';
+.titleColor{
+  color: #CBD7F6;;
+}
+
+.textColor{
+  color: #8793AF;
 }
