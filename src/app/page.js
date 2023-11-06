@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { useEffect, useState, useCallback, Fragment, useRef, useMemo } from 'react';
 import {AiFillLinkedin, AiFillMail, AiFillGithub, AiOutlineEllipsis, AiFillFolderOpen} from 'react-icons/ai'
 import { BiArrowToRight,  } from "react-icons/bi";
+import { BsCodeSlash,  } from "react-icons/bs";
 import { PiCarProfileFill } from "react-icons/pi";
 import { VscSymbolNumeric } from "react-icons/vsc";
 import DarkModeToggle from './DarkModeToggle'
@@ -160,6 +161,11 @@ export default function Home() {
         />
       </div>  
 
+      
+
+
+
+      {/* Incomplete */}
       <div>
         {sections.map(section => (
           <div key={section.id} style={{ display: activeSection === section.id ? 'block' : 'none' }}>
@@ -167,6 +173,8 @@ export default function Home() {
           </div>
         ))}
       </div>
+
+
 
 
       <section className="min-h-screen">
@@ -211,7 +219,7 @@ export default function Home() {
                 <h1>Hi, I&apos;m <span className={`fonts transition ${!isDarkMode ? 'bg-color-text' : 'text-custom-cyan'}`}>Gnanavel</span> Premnath<span className={`p-1 ${!isDarkMode ? 'bg-color-text' : 'text-custom-cyan'}`}>;</span></h1>
 
                 <h2>
-                <VscSymbolNumeric style={{ display: 'inline-block' }} /> Am I <span className={`wrap fonts transition ${!isDarkMode ? 'bg-color-text' : 'text-custom-cyan'}`}>
+                <BsCodeSlash className={`${!isDarkMode ? 'bg-color-text' : 'text-custom-cyan'}`} style={{ display: 'inline-block' }} /> Am I <span className={`wrap fonts transition ${!isDarkMode ? 'bg-color-text' : 'text-custom-cyan'}`}>
                     {text}
                     <span className={`cursor ${shouldBlink ? 'blinking-cursor' : ''}`}>|</span>
                   </span> Developer?
@@ -227,7 +235,7 @@ export default function Home() {
 
         <section className='aboutMe'>
           <div>
-            <h1 className='fonts textColor'><VscSymbolNumeric style={{ display: 'inline-block', color: !isDarkMode ? 'rgb(10,25,47)' : '#65FFDA' }} /> about me</h1>
+            <h1 className='fonts textColor'><BsCodeSlash style={{ display: 'inline-block', color: !isDarkMode ? 'rgb(10,25,47)' : '#65FFDA' }} /> about me</h1>
             <p className={`py-5 paraWidth ${!isDarkMode ? 'textColor' : 'titleColor'}`}>
               I am currently in my 3rd year at Simon Fraser University, diligently working towards completing my degree. Immersed in a dynamic academic environment, I am passionate about making the most of my educational journey and exploring new opportunities that come my way.
             </p>
@@ -268,7 +276,7 @@ export default function Home() {
 
 
 
-        <h1 className='fonts textColor project'><VscSymbolNumeric style={{ display: 'inline-block', color: !isDarkMode ? 'rgb(10,25,47)' : '#65FFDA' }} /> personal experiences</h1>
+        <h1 className='fonts textColor project'><BsCodeSlash style={{ display: 'inline-block', color: !isDarkMode ? 'rgb(10,25,47)' : '#65FFDA' }} /> personal experiences</h1>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-4 p-4'>
           {/* Full Stack Development */}
           <div className={`shadow-lg p-10 rounded-xl my-10 hover:bg-white hover:bg-opacity-5 transition duration-300 ${!isDarkMode ? 'bg-white' : 'boxColor'}`}>
