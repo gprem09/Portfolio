@@ -63,6 +63,12 @@ body {
   padding: 150px 0 100px 0;
 }
 
+.project{
+  margin-top: 0;
+  padding: 100px 0 0 0;
+  font-size: 50px;
+}
+
 .banner {
   margin-top: 0;
   padding: 150px 0 100px 0;
@@ -89,6 +95,10 @@ body {
   line-height: 1;
   margin-bottom: 20px;
   display: block;
+}
+
+.aboutMe h1{
+  font-size: 50px;
 }
 
 .banner p {
@@ -137,10 +147,10 @@ body {
 .bg-custom-gradient {
   background-color:hsla(217,62%,14%,1);
   background-image:
-  radial-gradient(at 92% 98%, hsla(217,21%,39%,1) 0px, transparent 50%),
-  radial-gradient(at 72% 96%, hsla(262,46%,28%,1) 0px, transparent 50%),
-  radial-gradient(at 32% 95%, hsla(358,20%,37%,1) 0px, transparent 50%),
-  radial-gradient(at 1% 100%, hsla(238,0%,56%,1) 0px, transparent 50%);
+  radial-gradient(at 46% 25%, hsla(217,62%,14%,1) 0px, transparent 50%),
+  radial-gradient(at 99% 100%, hsla(186,5%,47%,1) 0px, transparent 50%),
+  radial-gradient(at 58% 95%, hsla(227,66%,27%,1) 0px, transparent 50%),
+  radial-gradient(at 29% 95%, hsla(260,37%,29%,1) 0px, transparent 50%);
 }
 
 .text-custom-cyan {
