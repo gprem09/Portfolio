@@ -95,7 +95,7 @@ export default function Home() {
   }, [tick, delta]);
 
   return (
-    <main className={`md:px-20 lg:px-20 px-10 transition ${isDarkMode ? 'bg-custom-gradient text-white' : 'titleBg bg-color-text'}`}>
+    <main className={`md:px-20 lg:px-20 px-10 transition ${isDarkMode ? 'bg-custom-gradient text-white' : 'bg-white bg-color-text'}`}>
       <section className="min-h-screen">
         <nav className='py-10 mb-12 flex justify-between'>
         <div className={`flex items-center gap-8 transition ${!isDarkMode ? 'bg-color-text' : 'text-custom-cyan'}`}>
@@ -198,20 +198,20 @@ export default function Home() {
         <h1 className='fonts textColor project'><VscSymbolNumeric style={{ display: 'inline-block', color: !isDarkMode ? 'rgb(10,25,47)' : '#65FFDA' }} /> personal experiences</h1>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-4 p-4'>
           {/* Full Stack Development */}
-          <div className='shadow-lg p-10 rounded-xl my-10 hover:bg-white hover:bg-opacity-10 transition duration-300'>
+          <div className='shadow-lg p-10 rounded-xl my-10 hover:bg-white hover:bg-opacity-5 transition duration-300'>
             <div className='flex justify-between'>
               <a href="https://github.com/gprem09/Fullstack-Web-Development" target="_blank" rel="noopener noreferrer">
                 <AiFillGithub className='text-xl'/>
               </a>
               <AiFillFolderOpen className='text-xl'/>
             </div>
-            <h3 className='text-center text-lg font-medium pt-8 pb-2 titleColor'>
+            <h3 className='text-center text-lg font-medium pt-8 pb-2 titleColor' style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>
               Full Stack Development
             </h3>
             <p className='py-2 textColor'>
             In September 2022, I designed and deployed a multimedia review platform built with the MEAN stack, aimed at improving the way users engage with movie and TV show reviews. This platform features integration with the TMDb API, which allows for easy access to movie and TV show data and lets users search for content by genre. For user security and management, the platform includes JWT for user authentication and CRUD operations. The backend is powered by MongoDB, offering a scalable database solution. The application is hosted on Google Cloud Platform to ensure it runs smoothly and can handle more users as it grows.
             </p>
-            <h4 className='text-center py-4 titleColor'>
+            <h4 className='text-center py-4 titleColor' style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>
               Main Programming languages and tools used:
             </h4>
               <div className='flex justify-center gap-4 textColor'>
@@ -222,7 +222,7 @@ export default function Home() {
                   onClick={openFullStackModal}>
                   
                   <span className={`hidden md:inline ${!isDarkMode ? '' : 'text-custom-cyan'}`} style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>Show More</span>
-                  <AiOutlineEllipsis className={`text-2xl md:hidden ${!isDarkMode ? '' : 'text-custom-cyan'}`} style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }} />
+                  <AiOutlineEllipsis className={`text-2xl md:hidden ${!isDarkMode ? '' : 'text-custom-cyan'}`} />
 
                 </button>
               </div>
@@ -235,8 +235,8 @@ export default function Home() {
                     
                     <span className="inline-block h-screen align-middle" aria-hidden="true">&#8203;</span>
                     
-                    <div className="inline-block p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
-                      <Dialog.Title as="h3" className="text-lg font-medium leading-6 text-gray-900">
+                    <div className="inline-block p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-custom-gradient shadow-xl rounded-2xl">
+                      <Dialog.Title as="h3" className="text-lg font-medium leading-6 titleColor">
                         Additional:
                       </Dialog.Title>
                       <div className="mt-2 textColor">
@@ -245,7 +245,7 @@ export default function Home() {
                         <p className='py-1'>NodeJS</p>
                       </div>
                       <div className="mt-4">
-                        <button type="button" className="text-custom-cyan hover:text-teal-900" onClick={closeFullStackModal}>
+                        <button type="button" className="text-custom-cyan hover:text-teal-900" style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }} onClick={closeFullStackModal}>
                           Close
                         </button>
                       </div>
@@ -263,13 +263,13 @@ export default function Home() {
               </a>
               <AiFillFolderOpen className='text-xl'/>
             </div>
-            <h3 className='text-center text-lg font-medium pt-8 pb-2 titleColor'>
+            <h3 className='text-center text-lg font-medium pt-8 pb-2 titleColor' style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>
               Angular Web Development
             </h3>
             <p className='py-2 textColor'>
               In March 2021, I developed a dynamic Angular web application that allowed the public to report and monitor missing pigs effectively. This platform offers enhanced engagement and functionality through interactive features. With CRUD operations, JSON libraries, and REST APIs, the app manages data on a web server seamlessly. I integrated the Leaflet maps API to help users filter reports, interact with map markers, and obtain a detailed view of pig sightings. The application includes well-designed forms for easy report submission and smart feedback systems for handling user errors, ensuring an intuitive and smooth user experience.
             </p>
-            <h4 className='text-center py-4 titleColor'>
+            <h4 className='text-center py-4 titleColor' style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>
               Main Programming languages and tools used:
             </h4>
               <div className='flex justify-center gap-4 textColor'>
@@ -289,13 +289,13 @@ export default function Home() {
                     
                     <span className="inline-block h-screen align-middle" aria-hidden="true">&#8203;</span>
                     
-                    <div className="inline-block p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
-                      <Dialog.Title as="h3" className="text-lg font-medium leading-6 text-gray-900">
+                    <div className="inline-block p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-custom-gradient shadow-xl rounded-2xl">
+                      <Dialog.Title as="h3" className="text-lg font-medium leading-6 titleColor">
                         Additional:
                       </Dialog.Title>
                       <div className="mt-2 textColor">
-                        <p className='py-1 text-black'>HTML</p>
-                        <p className='py-1 text-black'>CSS</p>
+                        <p className='py-1'>HTML</p>
+                        <p className='py-1'>CSS</p>
                       </div>
                       <div className="mt-4">
                         <button type="button" className="text-custom-cyan hover:text-teal-700" onClick={closeAngularModal}>
@@ -317,13 +317,13 @@ export default function Home() {
               </a>
               <AiFillFolderOpen className='text-xl'/>
             </div>
-            <h3 className='text-center text-lg font-medium pt-8 pb-2 titleColor'>
+            <h3 className='text-center text-lg font-medium pt-8 pb-2 titleColor' style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>
               2D-Arcade Game
             </h3>
             <p className='py-2 textColor'>
               In September 2021, I led a group project to develop a 2D arcade game named &quot;Spirit Experiment&quot;. We applied Java Swing and Graphics2D to create a visually engaging and responsive game engine. We adopted Agile Scrum methodologies, such as sprint planning, daily stand-ups, and retrospectives, which enhanced our workflow and project management. To ensure the reliability of our game logic and mechanics, we utilized JUnit and Junit.jupiter for thorough unit testing, aiming for a bug-free user experience. The combination of these practices contributed to the successful delivery of a robust and enjoyable 2D arcade gaming experience.
             </p>
-            <h4 className='text-center py-4 titleColor'>
+            <h4 className='text-center py-4 titleColor' style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>
               Main Programming languages and tools used:
             </h4>
               <div className='flex justify-center gap-4 textColor'>
@@ -343,13 +343,13 @@ export default function Home() {
                     
                     <span className="inline-block h-screen align-middle" aria-hidden="true">&#8203;</span>
                     
-                    <div className="inline-block p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
-                      <Dialog.Title as="h3" className="text-lg font-medium leading-6 text-gray-900">
+                    <div className="inline-block p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-custom-gradient shadow-xl rounded-2xl">
+                      <Dialog.Title as="h3" className="text-lg font-medium leading-6 titleColor">
                         Additional:
                       </Dialog.Title>
                       <div className="mt-2 textColor">
-                        <p className='py-1 text-black'>JUnit</p>
-                        <p className='py-1 text-black'>Swing (GUI)</p>
+                        <p className='py-1'>JUnit</p>
+                        <p className='py-1'>Swing (GUI)</p>
                       </div>
                       <div className="mt-4">
                         <button type="button" className="text-custom-cyan hover:text-teal-700" onClick={close2DModal}>
@@ -370,13 +370,13 @@ export default function Home() {
               </a>
               <AiFillFolderOpen className='text-xl'/>
             </div>
-            <h3 className='text-center text-lg font-medium pt-8 pb-2 titleColor'>
+            <h3 className='text-center text-lg font-medium pt-8 pb-2 titleColor' style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>
               myShell
             </h3>
             <p className='py-2 textColor'>
               In January 2022, I developed a custom C-based shell, myShell, that facilitates command execution, environment variable management, and command history logging. This project demonstrated my skills in system programming and my ability to apply complex C and UNIX system call concepts, such as process forking, piping, and efficient memory management. I prioritized security by implementing robust error handling and password protection for sensitive operations. Additionally, I enhanced user experience by allowing dynamic theme color adjustments, adding a layer of personalization to the shell interface.
             </p>
-            <h4 className='text-center py-4 titleColor'>
+            <h4 className='text-center py-4 titleColor' style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>
               Main Programming languages and tools used:
             </h4>
               <div className='flex justify-center textColor'>
@@ -392,13 +392,13 @@ export default function Home() {
               </a>
               <AiFillFolderOpen className='text-xl'/>
             </div>
-            <h3 className='text-center text-lg font-medium pt-8 pb-2 titleColor'>
+            <h3 className='text-center text-lg font-medium pt-8 pb-2 titleColor' style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>
               Note-Taking App
             </h3>
             <p className='py-2 textColor'>
               For my journey into backend development, I developed a full-stack note-taking app enabling users to manage their notes through operations such as creating, viewing, updating, and deleting (CRUD functionality). The server-side was done by Express.js, which facilitated the routing with a MongoDB database. On the client side, EJS was used for the user interface. Features like efficient pagination and an organized dashboard were incorporated to enhance user experience. For deployment, Docker was utilized, which not only streamlined the launch process but also ensured that the application could be run consistently across different computing environments.
             </p>
-            <h4 className='text-center py-4 titleColor'>
+            <h4 className='text-center py-4 titleColor' style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>
               Main Programming languages and tools used:
             </h4>
             <div className='flex justify-center gap-4 textColor'>
@@ -419,8 +419,8 @@ export default function Home() {
                     
                     <span className="inline-block h-screen align-middle" aria-hidden="true">&#8203;</span>
                     
-                    <div className="inline-block p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
-                      <Dialog.Title as="h3" className="text-lg font-medium leading-6 text-gray-900">
+                    <div className="inline-block p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-custom-gradient shadow-xl rounded-2xl">
+                      <Dialog.Title as="h3" className="text-lg font-medium leading-6 titleColor">
                         Additional:
                       </Dialog.Title>
                       <div className="mt-2 textColor">
@@ -445,13 +445,13 @@ export default function Home() {
               <AiFillGithub className='text-xl'/>
               <AiFillFolderOpen className='text-xl'/>
             </div>
-            <h3 className='text-center text-lg font-medium pt-8 pb-2 titleColor'>
+            <h3 className='text-center text-lg font-medium pt-8 pb-2 titleColor' style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>
               Arduino Gesture Control Car
             </h3>
             <p className='py-2 textColor'>
               In December 2019, I worked on an embedded systems project to create a gesture-controlled car using Arduino, showcasing my skills in electronics. This innovative project involved developing a system that recognizes finger gestures to command the cars movement, allowing for an intuitive driving experience. I programmed in C++ within the Arduino IDE, which was crucial for the seamless integration of the hardware and software, resulting in a responsive and precise control mechanism. This work highlighted the exciting possibilities for enhancing human-machine interaction, specifically in the realm of vehicular control.
             </p>
-            <h4 className='text-center py-4 titleColor'>
+            <h4 className='text-center py-4 titleColor' style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>
               Main Programming languages and tools used:
             </h4>
             <div className='flex justify-center textColor'>
