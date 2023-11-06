@@ -145,12 +145,13 @@ body {
 }
 
 .bg-custom-gradient {
-  background-color:hsla(217,62%,14%,1);
+  background-color:hsla(240,100%,9%,1);
   background-image:
-  radial-gradient(at 46% 25%, hsla(217,62%,14%,1) 0px, transparent 50%),
-  radial-gradient(at 99% 100%, hsla(186,5%,47%,1) 0px, transparent 50%),
-  radial-gradient(at 58% 95%, hsla(227,66%,27%,1) 0px, transparent 50%),
-  radial-gradient(at 29% 95%, hsla(260,37%,29%,1) 0px, transparent 50%);
+  radial-gradient(at 57% 13%, hsla(232,83%,9%,1) 0px, transparent 50%),
+  radial-gradient(at 97% 24%, hsla(230,75%,24%,0.57) 0px, transparent 50%),
+  radial-gradient(at 99% 100%, hsla(245,11%,55%,0.4) 0px, transparent 50%),
+  radial-gradient(at 5% 97%, hsla(245,37%,28%,0.91) 0px, transparent 50%),
+  radial-gradient(at 58% 87%, hsla(237,64%,26%,1) 0px, transparent 50%);
 }
 
 .text-custom-cyan {

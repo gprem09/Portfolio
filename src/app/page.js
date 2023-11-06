@@ -1,8 +1,7 @@
 "use client";
 
-import Image from 'next/image'
 import { useEffect, useState, useCallback, Fragment } from 'react';
-import {AiFillLinkedin, AiFillMail, AiFillGithub, AiOutlineEllipsis, AiOutlineMenu, AiFillFolderOpen} from 'react-icons/ai'
+import {AiFillLinkedin, AiFillMail, AiFillGithub, AiOutlineEllipsis, AiFillFolderOpen} from 'react-icons/ai'
 import { BiArrowToRight } from "react-icons/bi";
 import { VscSymbolNumeric } from "react-icons/vsc";
 import DarkModeToggle from './DarkModeToggle'
