@@ -1,14 +1,24 @@
 "use client";
 
-import { useEffect, useState, useCallback, Fragment } from 'react';
+import Image from 'next/image';
+import { useEffect, useState, useCallback, Fragment, useRef, useMemo } from 'react';
 import {AiFillLinkedin, AiFillMail, AiFillGithub, AiOutlineEllipsis, AiFillFolderOpen} from 'react-icons/ai'
-import { BiArrowToRight } from "react-icons/bi";
+import { BiArrowToRight,  } from "react-icons/bi";
+import { PiCarProfileFill } from "react-icons/pi";
 import { VscSymbolNumeric } from "react-icons/vsc";
 import DarkModeToggle from './DarkModeToggle'
 import { Col, Container, Row } from 'react-bootstrap';
 import { Dialog, Transition } from '@headlessui/react';
 
 export default function Home() {
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [activeSection, setActiveSection] = useState(null);
+  const [isJumping, setIsJumping] = useState(false);
+  const sections = useMemo(() => [
+    { id: 'section1', start: 100, end: 500, text: 'welcome' },
+    { id: 'section2', start: 500, end: 1000, text: 'about me' },
+    { id: 'section3', start: 1000, end: 2700, text: 'projects' },
+  ], []);
   const [isFullStackModalOpen, setFullStackModalOpen] = useState(false);
   const [isAngularModalOpen, setAngularModalOpen] = useState(false);
   const [is2DModalOpen, set2DModalOpen] = useState(false);
@@ -93,8 +103,72 @@ export default function Home() {
     return () => clearInterval(ticker);
   }, [tick, delta]);
 
+  useEffect(() => {
+    const updateScrollProgress = () => {
+      const scrollPosition = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const docHeight = document.documentElement.scrollHeight;
+      const totalScrollableDistance = docHeight - windowHeight;
+
+      const progress = (scrollPosition / totalScrollableDistance) * 100;
+      setScrollProgress(progress);
+
+      const currentSection = sections.find(section => 
+        scrollPosition >= section.start && scrollPosition <= section.end
+      );
+
+      setActiveSection(currentSection ? currentSection.id : null);
+    };
+
+    window.addEventListener('scroll', updateScrollProgress);
+
+    return () => {
+      window.removeEventListener('scroll', updateScrollProgress);
+    };
+  }, [sections]);
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.code === 'Space' || event.code === 'Enter') {
+        setIsJumping(true);
+        setTimeout(() => setIsJumping(false), 500); 
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isJumping]);
+
+  const iconStyle = {
+    position: 'fixed',
+    bottom: '-3px',
+    left: `${scrollProgress}%`,
+    transform: 'translateX(-50%)', 
+    transition: 'left 0.2s ease-out', 
+  };
+
   return (
     <main className={`md:px-20 lg:px-20 px-10 transition ${isDarkMode ? 'bg-custom-gradient text-white' : 'bg-white bg-color-text'}`}>
+
+
+      <div style={iconStyle}>
+        <PiCarProfileFill
+          className={`text-3xl ${!isDarkMode ? 'bg-color-text' : 'text-custom-cyan'} ${isJumping ? 'jump' : ''}`}
+        />
+      </div>  
+
+      <div>
+        {sections.map(section => (
+          <div key={section.id} style={{ display: activeSection === section.id ? 'block' : 'none' }}>
+            {section.text}
+          </div>
+        ))}
+      </div>
+
+
       <section className="min-h-screen">
         <nav className='py-10 mb-12 flex justify-between'>
         <div className={`flex items-center gap-8 transition ${!isDarkMode ? 'bg-color-text' : 'text-custom-cyan'}`}>
@@ -197,7 +271,7 @@ export default function Home() {
         <h1 className='fonts textColor project'><VscSymbolNumeric style={{ display: 'inline-block', color: !isDarkMode ? 'rgb(10,25,47)' : '#65FFDA' }} /> personal experiences</h1>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-4 p-4'>
           {/* Full Stack Development */}
-          <div className='shadow-lg p-10 rounded-xl my-10 hover:bg-white hover:bg-opacity-5 transition duration-300'>
+          <div className={`shadow-lg p-10 rounded-xl my-10 hover:bg-white hover:bg-opacity-5 transition duration-300 ${!isDarkMode ? 'bg-white' : 'boxColor'}`}>
             <div className='flex justify-between'>
               <a href="https://github.com/gprem09/Fullstack-Web-Development" target="_blank" rel="noopener noreferrer">
                 <AiFillGithub className='text-xl'/>
@@ -255,7 +329,7 @@ export default function Home() {
           </div>
 
           {/* Angular Web Development */}
-          <div className='shadow-lg p-10 rounded-xl my-10 hover:bg-white hover:bg-opacity-10 transition duration-300'>
+          <div className={`shadow-lg p-10 rounded-xl my-10 hover:bg-white hover:bg-opacity-5 transition duration-300 ${!isDarkMode ? 'bg-white' : 'boxColor'}`}>
             <div className='flex justify-between'>
               <a href="https://github.com/gprem09/Pig-Report-Angular" target="_blank" rel="noopener noreferrer">
                 <AiFillGithub className='text-xl'/>
@@ -309,7 +383,7 @@ export default function Home() {
           </div>
 
           {/* 2d-Arcade Game */}
-          <div className='shadow-lg p-10 rounded-xl my-10 hover:bg-white hover:bg-opacity-10 transition duration-300'>
+          <div className={`shadow-lg p-10 rounded-xl my-10 hover:bg-white hover:bg-opacity-5 transition duration-300 ${!isDarkMode ? 'bg-white' : 'boxColor'}`}>
             <div className='flex justify-between'>
               <a href="https://github.com/gprem09/2d-Arcade-Java-Game" target="_blank" rel="noopener noreferrer">
                 <AiFillGithub className='text-xl'/>
@@ -362,7 +436,7 @@ export default function Home() {
           </div>
 
           {/* cShell */}
-          <div className='shadow-lg p-10 rounded-xl my-10 hover:bg-white hover:bg-opacity-10 transition duration-300'>
+          <div className={`shadow-lg p-10 rounded-xl my-10 hover:bg-white hover:bg-opacity-5 transition duration-300 ${!isDarkMode ? 'bg-white' : 'boxColor'}`}>
             <div className='flex justify-between'>
               <a href="https://github.com/gprem09/myShell" target="_blank" rel="noopener noreferrer">
                 <AiFillGithub className='text-xl'/>
@@ -384,7 +458,7 @@ export default function Home() {
           </div>
 
           {/* NoteTaking App */}
-          <div className='shadow-lg p-10 rounded-xl my-10 hover:bg-white hover:bg-opacity-10 transition duration-300'>
+          <div className={`shadow-lg p-10 rounded-xl my-10 hover:bg-white hover:bg-opacity-5 transition duration-300 ${!isDarkMode ? 'bg-white' : 'boxColor'}`}>
             <div className='flex justify-between'>
               <a href="https://github.com/gprem09/Docker-CRUD-App" target="_blank" rel="noopener noreferrer">
                 <AiFillGithub className='text-xl'/>
@@ -439,7 +513,7 @@ export default function Home() {
           </div>
 
           {/* Arduino Gesture Control Car */}
-          <div className='shadow-lg p-10 rounded-xl my-10 hover:bg-white hover:bg-opacity-10 transition duration-300'>
+          <div className={`shadow-lg p-10 rounded-xl my-10 hover:bg-white hover:bg-opacity-5 transition duration-300 ${!isDarkMode ? 'bg-white' : 'boxColor'}`}>
             <div className='flex justify-between'>
               <AiFillGithub className='text-xl'/>
               <AiFillFolderOpen className='text-xl'/>
@@ -460,7 +534,7 @@ export default function Home() {
 
         </div>
 
-        <div className='text-center textColor p-10'>
+        <div className='text-center textColor p-5'>
           <p className='py-2' style={{ fontSize: '12px' }}>Built and designed by Gnanavel Premnath.</p>
           <p style={{ fontSize: '12px' }}>All rights reserved. ©</p>
         </div>

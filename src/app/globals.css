@@ -177,3 +177,16 @@ body {
 .textColor{
   color: #8793AF;
 }
+
+@keyframes jump {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-50px); }
+}
+
+.jump {
+  animation: jump 0.5s ease;
+}
+
+.boxColor{
+  background-color: #101241;
+}
