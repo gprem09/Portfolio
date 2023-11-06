@@ -199,7 +199,7 @@ export default function Home() {
               />
             </li>
             <li>
-              <a className={`px-6 py-4 ml-8 transition ${!isDarkMode ? 'bg-color-text' : 'text-custom-cyan'} hover:text-teal-700`} 
+              <a className={`px-3 py-4 ml-8 transition ${!isDarkMode ? 'bg-color-text' : 'text-custom-cyan'} hover:text-teal-700`} 
                 href='/Gnanavel_Premnath_Resume.pdf' 
                 target="_blank" 
                 rel="noopener noreferrer" 
