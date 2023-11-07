@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback, Fragment, useRef, useMemo } from 'react';
+import { useEffect, useState, useCallback, Fragment, useMemo } from 'react';
 import {AiFillLinkedin, AiFillMail, AiFillGithub, AiOutlineEllipsis, AiFillFolderOpen} from 'react-icons/ai'
 import { BiArrowToRight,  } from "react-icons/bi";
 import { BsCodeSlash,  } from "react-icons/bs";
@@ -69,7 +69,9 @@ export default function Home() {
   const [shouldBlink, setShouldBlink] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const toRotate = ["Software", "Web", "Game"];
+  const toRotate = useMemo(() => [
+    "Software", "Web", "Game"
+  ], []);
   const [text, setText] = useState('');
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const period = 2000;
