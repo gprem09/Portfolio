@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useCallback, Fragment, useMemo } from 'react';
 import {AiFillLinkedin, AiFillMail, AiFillGithub, AiOutlineEllipsis, AiFillFolderOpen} from 'react-icons/ai'
-import { BiArrowToRight,  } from "react-icons/bi";
+import { BiArrowToRight, BiCodeCurly } from "react-icons/bi";
 import { BsCodeSlash,  } from "react-icons/bs";
 import { PiCarProfileFill } from "react-icons/pi";
 import DarkModeToggle from './DarkModeToggle'
@@ -160,22 +160,6 @@ export default function Home() {
           className={`text-3xl ${!isDarkMode ? 'bg-color-text' : 'text-custom-cyan'} ${isJumping ? 'jump' : ''}`}
         />
       </div>  
-
-      
-
-
-
-      {/* Incomplete */}
-      <div>
-        {sections.map(section => (
-          <div key={section.id} style={{ display: activeSection === section.id ? 'block' : 'none' }}>
-            {section.text}
-          </div>
-        ))}
-      </div>
-
-
-
 
       <section className="min-h-screen">
         <nav className='py-10 mb-12 flex justify-between'>
