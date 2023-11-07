@@ -1,12 +1,10 @@
 "use client";
 
-import Image from 'next/image';
 import { useEffect, useState, useCallback, Fragment, useRef, useMemo } from 'react';
 import {AiFillLinkedin, AiFillMail, AiFillGithub, AiOutlineEllipsis, AiFillFolderOpen} from 'react-icons/ai'
 import { BiArrowToRight,  } from "react-icons/bi";
 import { BsCodeSlash,  } from "react-icons/bs";
 import { PiCarProfileFill } from "react-icons/pi";
-import { VscSymbolNumeric } from "react-icons/vsc";
 import DarkModeToggle from './DarkModeToggle'
 import { Col, Container, Row } from 'react-bootstrap';
 import { Dialog, Transition } from '@headlessui/react';
