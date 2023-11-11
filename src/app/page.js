@@ -4,7 +4,6 @@ import { useEffect, useState, useCallback, Fragment, useMemo } from 'react';
 import {AiFillLinkedin, AiFillMail, AiFillGithub, AiOutlineEllipsis, AiFillFolderOpen} from 'react-icons/ai'
 import { BiArrowToRight } from "react-icons/bi";
 import { BsCodeSlash,  } from "react-icons/bs";
-import { PiCarProfileFill } from "react-icons/pi";
 import DarkModeToggle from './DarkModeToggle'
 import { Col, Container, Row } from 'react-bootstrap';
 import { Dialog, Transition } from '@headlessui/react';
@@ -209,11 +208,11 @@ export default function Home() {
         <section className='aboutMe'>
           <div>
             <h1 className='fonts textColor'><BsCodeSlash style={{ display: 'inline-block', color: !isDarkMode ? 'rgb(10,25,47)' : '#65FFDA' }} /> about me</h1>
-            <p className={`py-5 paraWidth ${!isDarkMode ? 'textColor' : 'titleColor'}`}>
+            <p className={`py-5 paraWidth text-xl ${!isDarkMode ? 'textColor' : 'titleColor'}`}>
               I am currently in my 3rd year at Simon Fraser University, diligently working towards completing my degree. Immersed in a dynamic academic environment, I am passionate about making the most of my educational journey and exploring new opportunities that come my way.
             </p>
 
-            <p className={`py-4 paraWidth ${!isDarkMode ? 'textColor' : 'titleColor'}`}>Here are some languages that I am currently working with;</p>
+            <p className={`py-4 paraWidth text-xl ${!isDarkMode ? 'textColor' : 'titleColor'}`}>Here are some languages that I am currently working with;</p>
 
             <div style={{
               display: 'grid',
@@ -229,7 +228,7 @@ export default function Home() {
               ))}
             </div>
             
-            <p className={`py-5 paraWidth ${!isDarkMode ? 'textColor' : 'titleColor'}`}>When I&apos;m not working, I like to spend my time;</p>
+            <p className={`py-5 paraWidth text-xl ${!isDarkMode ? 'textColor' : 'titleColor'}`}>When I&apos;m not working, I like to spend my time;</p>
 
             <div style={{
               display: 'grid',
