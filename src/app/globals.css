@@ -2,9 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Inter:wght@400;600&family=Space+Mono&display=swap');
+
 @font-face {
-  font-family: 'Leoscar';
-  src: url('/public/fonts/Leoscar.ttf');
+  font-family: leoscar;
+  src: url('/fonts/Leoscar.ttf');
 }
 
 @font-face {
@@ -21,6 +23,10 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -159,11 +165,11 @@ body {
 }
 
 .fonts{
-  font-family: 'leoscar';
+  font-family: leoscar, 'Ubuntu', sans-serif;
 }
 
 .ErikasBuero{
-  font-family: 'ErikasBuero';
+  font-family: 'Space Mono', monospace, 'Ubuntu', sans-serif;
 }
 
 .titleColor{
@@ -189,4 +195,12 @@ body {
 
 .boxColor{
   background-color: #101241;
+}
+
+.glass{
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.37);
 }
