@@ -11,6 +11,7 @@ import { Dialog, Transition } from '@headlessui/react';
 export default function Home() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isJumping, setIsJumping] = useState(false);
+  const [isCHATGPTModalOpen, setCHATGPTModalOpen] = useState(false);
   const [isFullStackModalOpen, setFullStackModalOpen] = useState(false);
   const [isAngularModalOpen, setAngularModalOpen] = useState(false);
   const [is2DModalOpen, set2DModalOpen] = useState(false);
@@ -23,8 +24,16 @@ export default function Home() {
 
   const hobbies = [
     'Video editing', 'Photo editing', 'VFX',
-    'Listen podcast', 'Table tennis', 'Eating ;)'
+    'Listen podcast', 'Table tennis', 'Gym'
   ];
+
+  const openCHATGPTModal = () => {
+    setCHATGPTModalOpen(true);
+  };
+
+  const closeCHATGPTModal = () => {
+    setCHATGPTModalOpen(false);
+  };
 
   const openFullStackModal = () => {
     setFullStackModalOpen(true);
@@ -197,7 +206,7 @@ export default function Home() {
                   </span> Developer?
                 </h2>
                 
-                <p className='ErikasBuero'>Exploring the world of Computer Science at Simon Fraser University in the ever-rainy Vancouver, BC, I&apos;ve found myself caught in a love triangle between full-stack development, artificial intelligence, and game development. It&apos;s like a techy soap opera, and I&apos;m here for all the drama!</p>
+                <p className='ErikasBuero'>Exploring the world of Computer Science at Simon Fraser University in the ever-rainy Vancouver, BC, I&apos;ve found myself caught in a love triangle between  artificial intelligence, full-stack development, and game development. It&apos;s like a techy soap opera, and I&apos;m here for all the drama!</p>
               </Col>
             </Row>
           </Container>
@@ -250,6 +259,65 @@ export default function Home() {
 
         <h1 className='fonts textColor project'><BsCodeSlash style={{ display: 'inline-block', color: !isDarkMode ? 'rgb(10,25,47)' : '#65FFDA' }} /> personal experiences</h1>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-4 p-4'>
+          
+          {/* ChatGPT Clone */}
+          <div className={`glass p-10 rounded-xl my-10 hover:bg-white hover:bg-opacity-5 transition duration-300 ${!isDarkMode ? 'bg-white' : 'boxColor'}`}>
+            <div className='flex justify-between'>
+              <a href="https://github.com/gprem09/CHATGPT-CLONE" target="_blank" rel="noopener noreferrer">
+                <AiFillGithub className='text-xl'/>
+              </a>
+              <AiFillFolderOpen className='text-xl'/>
+            </div>
+            <h3 className='text-center text-lg font-medium pt-8 pb-2 titleColor' style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>
+              ChatGPT Clone
+            </h3>
+            <p className='py-2 textColor'>
+            I developed a ChatGPT clone using Flask and GPT-4 OpenAI API, which handles multiple chat sessions and offer real-time interaction with the AI model. The application features LangChain for fine-tuning the GPT-4 model, allowing it to learn and respond to new information. I used Next.js and Tailwind CSS for a responsive user interface. The backend relies on MySQL for data management. The entire application is hosted on AWS.
+            </p>
+            <h4 className='text-center py-4 titleColor' style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>
+              Main Programming languages and tools used:
+            </h4>
+              <div className='flex justify-center gap-4 textColor'>
+                <p className='py-1'>Flask</p>
+                <p className='py-1'>NextJS</p>
+                <button 
+                  className='text-teal-500 hover:text-teal-700 transition duration-300' 
+                  onClick={openCHATGPTModal}>
+                  
+                  <span className={`hidden md:inline ${!isDarkMode ? '' : 'text-custom-cyan'}`} style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>Show More</span>
+                  <AiOutlineEllipsis className={`text-2xl md:hidden ${!isDarkMode ? '' : 'text-custom-cyan'}`} />
+
+                </button>
+              </div>
+              
+
+              <Transition appear show={isCHATGPTModalOpen} as={Fragment}>
+                <Dialog as="div" className="fixed inset-0 z-10 overflow-y-auto" onClose={closeCHATGPTModal}>
+                  <div className="min-h-screen px-4 text-center">
+                    <Dialog.Overlay className="fixed inset-0 bg-black opacity-30" />
+                    
+                    <span className="inline-block h-screen align-middle" aria-hidden="true">&#8203;</span>
+                    
+                    <div className="inline-block p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-custom-gradient shadow-xl rounded-2xl">
+                      <Dialog.Title as="h3" className="text-lg font-medium leading-6 titleColor">
+                        Additional:
+                      </Dialog.Title>
+                      <div className="mt-2 textColor">
+                        <p className='py-1'>Tailwind CSS</p>
+                        <p className='py-1'>MySQL</p>
+                        <p className='py-1'>AWS</p>
+                      </div>
+                      <div className="mt-4">
+                        <button type="button" className="text-custom-cyan hover:text-teal-900" style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }} onClick={closeCHATGPTModal}>
+                          Close
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </Dialog>
+              </Transition>
+          </div>
+
           {/* Full Stack Development */}
           <div className={`glass p-10 rounded-xl my-10 hover:bg-white hover:bg-opacity-5 transition duration-300 ${!isDarkMode ? 'bg-white' : 'boxColor'}`}>
             <div className='flex justify-between'>
@@ -262,7 +330,7 @@ export default function Home() {
               Full Stack Development
             </h3>
             <p className='py-2 textColor'>
-            In September 2022, I designed and deployed a multimedia review platform built with the MEAN stack, aimed at improving the way users engage with movie and TV show reviews. This platform features integration with the TMDb API, which allows for easy access to movie and TV show data and lets users search for content by genre. For user security and management, the platform includes JWT for user authentication and CRUD operations. The backend is powered by MongoDB, offering a scalable database solution. The application is hosted on Google Cloud Platform to ensure it runs smoothly and can handle more users as it grows.
+            I created a multimedia review site using the MEAN stack to enhance how people interact with movie and TV reviews. It integrates with the TMDb API for easy access to media information, allowing genre-based searches. The site uses JWT for secure user authentication and supports create, read, update, and delete operations. MongoDB is used for database, and it is hosted on Google Cloud Platform.
             </p>
             <h4 className='text-center py-4 titleColor' style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>
               Main Programming languages and tools used:
@@ -320,7 +388,7 @@ export default function Home() {
               Angular Web Development
             </h3>
             <p className='py-2 textColor'>
-              In March 2021, I developed a dynamic Angular web application that allowed the public to report and monitor missing pigs effectively. This platform offers enhanced engagement and functionality through interactive features. With CRUD operations, JSON libraries, and REST APIs, the app manages data on a web server seamlessly. I integrated the Leaflet maps API to help users filter reports, interact with map markers, and obtain a detailed view of pig sightings. The application includes well-designed forms for easy report submission and smart feedback systems for handling user errors, ensuring an intuitive and smooth user experience.
+            I built an Angular web app for reporting and tracking missing pigs, featuring interactive tools and map filters using the Leaflet API. It efficiently manages data with CRUD operations and REST APIs, offering user-friendly forms and error feedback for an intuitive experience.
             </p>
             <h4 className='text-center py-4 titleColor' style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>
               Main Programming languages and tools used:
@@ -374,7 +442,7 @@ export default function Home() {
               2D-Arcade Game
             </h3>
             <p className='py-2 textColor'>
-              In September 2021, I led a group project to develop a 2D arcade game named &quot;Spirit Experiment&quot;. We applied Java Swing and Graphics2D to create a visually engaging and responsive game engine. We adopted Agile Scrum methodologies, such as sprint planning, daily stand-ups, and retrospectives, which enhanced our workflow and project management. To ensure the reliability of our game logic and mechanics, we utilized JUnit and Junit.jupiter for thorough unit testing, aiming for a bug-free user experience. The combination of these practices contributed to the successful delivery of a robust and enjoyable 2D arcade gaming experience.
+            I led a project to develop &quot;Spirit Experiment&quot;, a 2D arcade game, using Java Swing and Graphics2D for a responsive design. We adopted Agile Scrum methods for efficient workflow and used JUnit for rigorous testing, ensuring a reliable and enjoyable gaming experience.
             </p>
             <h4 className='text-center py-4 titleColor' style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>
               Main Programming languages and tools used:
@@ -427,7 +495,7 @@ export default function Home() {
               myShell
             </h3>
             <p className='py-2 textColor'>
-              In January 2022, I developed a custom C-based shell, myShell, that facilitates command execution, environment variable management, and command history logging. This project demonstrated my skills in system programming and my ability to apply complex C and UNIX system call concepts, such as process forking, piping, and efficient memory management. I prioritized security by implementing robust error handling and password protection for sensitive operations. Additionally, I enhanced user experience by allowing dynamic theme color adjustments, adding a layer of personalization to the shell interface.
+            I developed myShell, a custom C-based shell featuring command execution, environment management, and history logging. It highlights my proficiency in system programming, utilizing complex C and UNIX concepts like process forking and piping.
             </p>
             <h4 className='text-center py-4 titleColor' style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>
               Main Programming languages and tools used:
@@ -449,7 +517,7 @@ export default function Home() {
               Note-Taking App
             </h3>
             <p className='py-2 textColor'>
-              For my journey into backend development, I developed a full-stack note-taking app enabling users to manage their notes through operations such as creating, viewing, updating, and deleting (CRUD functionality). The server-side was done by Express.js, which facilitated the routing with a MongoDB database. On the client side, EJS was used for the user interface. Features like efficient pagination and an organized dashboard were incorporated to enhance user experience. For deployment, Docker was utilized, which not only streamlined the launch process but also ensured that the application could be run consistently across different computing environments.
+            I developed a full-stack note-taking app with CRUD functionality, using Express.js and MongoDB for the backend, and EJS for the frontend. It features efficient pagination and an organized dashboard. Deployed with Docker, it ensures consistent operation across different environments.
             </p>
             <h4 className='text-center py-4 titleColor' style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>
               Main Programming languages and tools used:
@@ -502,7 +570,7 @@ export default function Home() {
               Arduino Gesture Control Car
             </h3>
             <p className='py-2 textColor'>
-              In December 2019, I worked on an embedded systems project to create a gesture-controlled car using Arduino, showcasing my skills in electronics. This innovative project involved developing a system that recognizes finger gestures to command the cars movement, allowing for an intuitive driving experience. I programmed in C++ within the Arduino IDE, which was crucial for the seamless integration of the hardware and software, resulting in a responsive and precise control mechanism. This work highlighted the exciting possibilities for enhancing human-machine interaction, specifically in the realm of vehicular control.
+              I developed a gesture-controlled car using Arduino, highlighting my electronics expertise. The project featured a system that interprets finger gestures for intuitive vehicle control, programmed in C++ with the Arduino IDE for responsive and precise operation.
             </p>
             <h4 className='text-center py-4 titleColor' style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>
               Main Programming languages and tools used:
