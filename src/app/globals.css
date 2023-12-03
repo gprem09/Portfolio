@@ -59,20 +59,30 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+.banner {
+  margin-top: 0;
+  padding: 200px 0 100px 0;
+}
+
 .aboutMe{
   margin-top: 0;
-  padding: 150px 0 100px 0;
+  padding: 200px 0 200px 0;
+}
+
+@media screen and (max-width: 768px) {
+  .banner {
+    padding: 50px 0 100px 0;
+  }
+
+  .aboutMe {
+    padding: 50px 0 100px 0;
+  }
 }
 
 .project{
   margin-top: 0;
   padding: 100px 0 0 0;
   font-size: 50px;
-}
-
-.banner {
-  margin-top: 0;
-  padding: 150px 0 100px 0;
 }
 
 .banner h1 {
@@ -105,9 +115,9 @@ body {
 .banner p {
   color: #5C6883;
   padding-top: 50px;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.5em;
-  width: 60%;
+  width: 50%;
 }
 
 .paraWidth {
