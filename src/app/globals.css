@@ -96,7 +96,15 @@ body {
 }
 
 .banner.light-mode h1 {
-  color: #8793AF;
+  color: #1C72BE;
+}
+
+.banner.light-mode h2 {
+  color: #3b82c1;
+}
+
+.banner.light-mode p {
+  color: #4d91cd;
 }
 
 .banner h2 {
