@@ -181,6 +181,10 @@ body {
   radial-gradient(at 58% 87%, hsla(237,64%,26%,1) 0px, transparent 50%);
 }
 
+.bg-custom-graident-light {
+  background-image: linear-gradient(to left top, #b9cff0, #cfdaf4, #e1e5f7, #f2f2fb, #ffffff);
+}
+
 .text-custom-cyan {
   color: #65FFDA;
 }

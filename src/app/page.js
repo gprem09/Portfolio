@@ -148,7 +148,7 @@ export default function Home() {
   };
 
   return (
-    <main className={`md:px-20 lg:px-20 px-10 transition ${isDarkMode ? 'bg-custom-gradient text-white' : 'bg-white bg-color-text'}`}>
+    <main className={`md:px-20 lg:px-20 px-10 transition ${isDarkMode ? 'bg-custom-gradient text-white' : 'bg-custom-graident-light bg-color-text'}`}>
 
       {/** 
       <div style={iconStyle}>
