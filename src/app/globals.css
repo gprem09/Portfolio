@@ -120,6 +120,14 @@ body {
   font-size: 50px;
 }
 
+.light-mode-h {
+  color: #1C72BE;
+}
+
+.light-mode-h2 {
+  color: #3b82c1;
+}
+
 .banner p {
   color: #5C6883;
   padding-top: 50px;
