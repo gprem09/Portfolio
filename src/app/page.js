@@ -216,7 +216,7 @@ export default function Home() {
 
         <section className='aboutMe'>
           <div>
-            <h1 className='fonts light-mode-h'><BsCodeSlash style={{ display: 'inline-block', color: !isDarkMode ? 'rgb(10,25,47)' : '#65FFDA' }} /> about me</h1>
+            <h1 className='fonts textColor'><BsCodeSlash style={{ display: 'inline-block', color: !isDarkMode ? 'rgb(10,25,47)' : '#65FFDA' }} /> about me</h1>
             <p className={`py-5 paraWidth text-xl ${!isDarkMode ? 'textColor' : 'titleColor'}`}>
               I am currently in my 3rd year at Simon Fraser University, diligently working towards completing my degree. Immersed in a dynamic academic environment, I am passionate about making the most of my educational journey and exploring new opportunities that come my way.
             </p>
@@ -257,7 +257,7 @@ export default function Home() {
 
 
 
-        <h1 className='fonts light-mode-h project'><BsCodeSlash style={{ display: 'inline-block', color: !isDarkMode ? 'rgb(10,25,47)' : '#65FFDA' }} /> personal experiences</h1>
+        <h1 className='fonts textColor project'><BsCodeSlash style={{ display: 'inline-block', color: !isDarkMode ? 'rgb(10,25,47)' : '#65FFDA' }} /> personal experiences</h1>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-4 p-4'>
           
           {/* ChatGPT Clone */}
