@@ -194,19 +194,20 @@ export default function Home() {
 
 
         <section className={`banner ${!isDarkMode ? 'light-mode' : ''}`} id='home'>
-          <Container>
+          <Container fluid>
+            {/* Use fluid for a full-width container */}
             <Row>
               <Col xs={12} md={6} xl={7}>
                 <h1>Hi, I&apos;m <span className={`fonts transition ${!isDarkMode ? 'bg-color-text' : 'text-custom-cyan'}`}>Gnanavel</span> Premnath<span className={`p-1 ${!isDarkMode ? 'bg-color-text' : 'text-custom-cyan'}`}>;</span></h1>
 
                 <h2>
-                <BsCodeSlash className={`${!isDarkMode ? 'bg-color-text' : 'text-custom-cyan'}`} style={{ display: 'inline-block' }} /> Am I <span className={`wrap fonts transition ${!isDarkMode ? 'bg-color-text' : 'text-custom-cyan'}`}>
+                  <BsCodeSlash className={`${!isDarkMode ? 'bg-color-text' : 'text-custom-cyan'}`} style={{ display: 'inline-block' }} /> Am I <span className={`wrap fonts transition ${!isDarkMode ? 'bg-color-text' : 'text-custom-cyan'}`}>
                     {text}
                     <span className={`cursor ${shouldBlink ? 'blinking-cursor' : ''}`}>|</span>
                   </span> Developer?
                 </h2>
                 
-                <p className='ErikasBuero'>Exploring the world of Computer Science at Simon Fraser University in the ever-rainy Vancouver, BC, I&apos;ve found myself caught in a love triangle between  artificial intelligence, full-stack development, and game development. It&apos;s like a techy soap opera, and I&apos;m here for all the drama!</p>
+                <p className='ErikasBuero'>Exploring the world of Computer Science at Simon Fraser University in the ever-rainy Vancouver, BC, I&apos;ve found myself caught in a love triangle between artificial intelligence, full-stack development, and game development. It&apos;s like a techy soap opera, and I&apos;m here for all the drama!</p>
               </Col>
             </Row>
           </Container>
