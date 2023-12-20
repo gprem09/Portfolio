@@ -60,8 +60,7 @@ body {
 }
 
 .aboutMe{
-  margin-top: 0;
-  padding: 200px 0 200px 0;
+  padding: 12% 0;
 }
 
 @media screen and (max-width: 768px) {
@@ -70,14 +69,13 @@ body {
   }
 
   .aboutMe {
-    padding: 5% 0;
+    padding: 30% 0;
   }
 }
 
 .project{
-  margin-top: 0;
-  padding: 100px 0 0 0;
-  font-size: 50px;
+  padding-top: 3%;
+  font-size: 3vw;
 }
 
 .banner {
@@ -124,7 +122,16 @@ body {
 }
 
 .aboutMe h1{
-  font-size: 50px;
+  font-size: 3vw;
+}
+
+.aboutMe p {
+  width: 60%;
+  font-size: 1.3vw;
+}
+
+.aboutMeP {
+  font-size: 1vw;
 }
 
 .light-mode-h {
@@ -135,18 +142,43 @@ body {
   color: #3b82c1;
 }
 
-.paraWidth {
-  width: 60%;
-}
 
 @media (max-width: 768px) {
-  .banner p {
-    width: 90%; 
+  .banner h1 {
+    font-size: 10vw;
+    padding-top: 20%;
+    padding-bottom: 10%;
   }
-  .paraWidth {
-    width: 90%;
+
+  .banner h2 {
+    font-size: 7vw;
+    padding-bottom: 5%;
+  }
+
+  .banner p {
+    font-size: 4vw;
+    width: 100%; 
+  }
+
+  .aboutMe h1 {
+    font-size: 10vw;
+  }
+
+  .aboutMe p {
+    width: 100%;
+    font-size: 4vw;
+  }
+
+  .aboutMeP {
+    font-size: 3vw;
+    padding-bottom: 10%;
+  }
+
+  .project {
+    font-size: 10vw;
   }
 }
+
 
 @keyframes blink {
   0% {opacity: 0;}

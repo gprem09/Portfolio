@@ -215,39 +215,31 @@ export default function Home() {
 
 
 
-        <section className='aboutMe'>
+        <section className={`aboutMe ${!isDarkMode ? 'light-mode' : ''}`}>
           <div>
-            <h1 className={`fonts ${!isDarkMode ? 'light-mode-h' : 'textColor'}`}><BsCodeSlash style={{ display: 'inline-block', color: !isDarkMode ? 'rgb(10,25,47)' : '#65FFDA' }} /> about me</h1>
-            <p className={`py-5 paraWidth text-xl ${!isDarkMode ? 'textColor' : 'titleColor'}`}>
+            <h1 className={`fonts text-4vw lg:text-3vw xl:text-2.5vw 2xl:text-2vw ${!isDarkMode ? 'light-mode-h' : 'textColor'}`}>
+              <BsCodeSlash style={{ display: 'inline-block', color: !isDarkMode ? 'rgb(10,25,47)' : '#65FFDA' }} /> about me
+            </h1>
+            <p className={`py-5 ${!isDarkMode ? 'textColor' : 'titleColor'}`}>
               I am currently in my 3rd year at Simon Fraser University, diligently working towards completing my degree. Immersed in a dynamic academic environment, I am passionate about making the most of my educational journey and exploring new opportunities that come my way.
             </p>
 
-            <p className={`py-4 paraWidth text-xl ${!isDarkMode ? 'light-mode-h2' : 'titleColor'}`}>Here are some languages that I am currently working with;</p>
+            <p className={`py-4 ${!isDarkMode ? 'light-mode-h2' : 'titleColor'}`}>Here are some languages that I am currently working with;</p>
 
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(3, 1fr)',
-              gridGap: '10px', 
-              maxWidth: '600px',
-            }}>
+            <div className="grid grid-cols-3 gap-4 max-w-2xl aboutMeP">
               {skills.map((skill, index) => (
-                <div key={index} style={{ display: 'flex', alignItems: 'center', color: '#8793AF' }}>
+                <div key={index} className="flex items-center">
                   <BiArrowToRight style={{ marginRight: '5px', color: !isDarkMode ? 'rgb(10,25,47)' : '#65FFDA' }} />
                   {skill}
                 </div>
               ))}
             </div>
             
-            <p className={`py-5 paraWidth text-xl ${!isDarkMode ? 'light-mode-h2' : 'titleColor'}`}>When I&apos;m not working, I like to spend my time;</p>
+            <p className={`py-5 ${!isDarkMode ? 'light-mode-h2' : 'titleColor'}`}>When I&apos;m not working, I like to spend my time;</p>
 
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(3, 1fr)',
-              gridGap: '10px', 
-              maxWidth: '600px',
-            }}>
+            <div className="grid grid-cols-3 gap-4 max-w-2xl aboutMeP">
               {hobbies.map((hobby, index) => (
-                <div key={index} style={{ display: 'flex', alignItems: 'center', color: '#8793AF' }}>
+                <div key={index} className="flex items-center">
                   <BiArrowToRight style={{ marginRight: '5px', color: !isDarkMode ? 'rgb(10,25,47)' : '#65FFDA' }} />
                   {hobby}
                 </div>
@@ -255,6 +247,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+
 
 
 
