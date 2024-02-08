@@ -11,6 +11,8 @@ import { Dialog, Transition } from '@headlessui/react';
 export default function Home() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isJumping, setIsJumping] = useState(false);
+  const [isMRIModalOpen, setMRIModalOpen] = useState(false);
+  const [isCheckoutModalOpen, setCheckoutModalOpen] = useState(false);
   const [isCHATGPTModalOpen, setCHATGPTModalOpen] = useState(false);
   const [isFullStackModalOpen, setFullStackModalOpen] = useState(false);
   const [isAngularModalOpen, setAngularModalOpen] = useState(false);
@@ -26,6 +28,23 @@ export default function Home() {
     'Video editing', 'Photo editing', 'VFX',
     'Listen podcast', 'Table tennis', 'Gym'
   ];
+
+  const openMRIModal = () => {
+    setMRIModalOpen(true);
+  };
+
+  const closeMRIModal = () => {
+    setMRIModalOpen(false);
+  };
+
+
+  const openCheckoutModal = () => {
+    setCheckoutModalOpen(true);
+  };
+
+  const closeCheckoutModal = () => {
+    setCheckoutModalOpen(false);
+  };
 
   const openCHATGPTModal = () => {
     setCHATGPTModalOpen(true);
@@ -253,6 +272,117 @@ export default function Home() {
 
         <h1 className={`fonts project ${!isDarkMode ? 'light-mode-h' : 'textColor'}`}><BsCodeSlash style={{ display: 'inline-block', color: !isDarkMode ? 'rgb(10,25,47)' : '#65FFDA' }} /> personal experiences</h1>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-4 p-4'>
+
+          {/* Brain Tumour */}
+          <div className={`glass p-10 rounded-xl my-10 hover:bg-white hover:bg-opacity-5 transition duration-300 ${!isDarkMode ? 'bg-white' : 'boxColor'}`}>
+            <div className='flex justify-between'>
+              <a href="https://github.com/gprem09/Brain-Tumor-Detection" target="_blank" rel="noopener noreferrer">
+                <AiFillGithub className='text-xl'/>
+              </a>
+              <AiFillFolderOpen className='text-xl'/>
+            </div>
+            <h3 className='text-center text-lg font-medium pt-8 pb-2 titleColor' style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>
+              Brain Tumour Detection
+            </h3>
+            <p className='py-2 textColor'>
+            Developed a neural network using PyTorch for brain tumor detection, achieving 100% accuracy. This involved crafting custom convolutional networks and utilizing OpenCV for image analysis, and implementing custom training loops to better understand neural network fundamentals.
+            </p>
+            <h4 className='text-center py-4 titleColor' style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>
+              Main Programming languages and tools used:
+            </h4>
+              <div className='flex justify-center gap-4 textColor'>
+                <p className='py-1'>Python</p>
+                <p className='py-1'>PyTorch</p>
+                <button 
+                  className='text-teal-500 hover:text-teal-700 transition duration-300' 
+                  onClick={openMRIModal}>
+                  
+                  <span className={`hidden md:inline ${!isDarkMode ? '' : 'text-custom-cyan'}`} style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>Show More</span>
+                  <AiOutlineEllipsis className={`text-2xl md:hidden ${!isDarkMode ? '' : 'text-custom-cyan'}`} />
+
+                </button>
+              </div>
+              
+
+              <Transition appear show={isMRIModalOpen} as={Fragment}>
+                <Dialog as="div" className="fixed inset-0 z-10 overflow-y-auto" onClose={closeMRIModal}>
+                  <div className="min-h-screen px-4 text-center">
+                    <Dialog.Overlay className="fixed inset-0 bg-black opacity-30" />
+                    
+                    <span className="inline-block h-screen align-middle" aria-hidden="true">&#8203;</span>
+                    
+                    <div className="inline-block p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-custom-gradient shadow-xl rounded-2xl">
+                      <Dialog.Title as="h3" className="text-lg font-medium leading-6 titleColor">
+                        Additional:
+                      </Dialog.Title>
+                      <div className="mt-2 textColor">
+                        <p className='py-1'>OpenCV</p>
+                        <p className='py-1'>Numpy</p>
+                      </div>
+                      <div className="mt-4">
+                        <button type="button" className="text-custom-cyan hover:text-teal-900" style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }} onClick={closeMRIModal}>
+                          Close
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </Dialog>
+              </Transition>
+          </div>
+
+          {/* Self Checkout */}
+          <div className={`glass p-10 rounded-xl my-10 hover:bg-white hover:bg-opacity-5 transition duration-300 ${!isDarkMode ? 'bg-white' : 'boxColor'}`}>
+            <div className='flex justify-between'>
+              <AiFillGithub className='text-xl'/>
+              <AiFillFolderOpen className='text-xl'/>
+            </div>
+            <h3 className='text-center text-lg font-medium pt-8 pb-2 titleColor' style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>
+              Smart Self-Checkout
+            </h3>
+            <p className='py-2 textColor'>
+            Developed a smart self-checkout system using a custom-trained YOLO model to recognize and price over 100 grocery items, incorporating OpenCV for advanced image analysis, which significantly improved the accuracy of item identification. This system streamlines the checkout process by providing real-time, automated calculations of total costs.
+            </p>
+            <h4 className='text-center py-4 titleColor' style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>
+              Main Programming languages and tools used:
+            </h4>
+              <div className='flex justify-center gap-4 textColor'>
+                <p className='py-1'>Python</p>
+                <p className='py-1'>PyTorch</p>
+                <button 
+                  className='text-teal-500 hover:text-teal-700 transition duration-300' 
+                  onClick={openCheckoutModal}>
+                  
+                  <span className={`hidden md:inline ${!isDarkMode ? '' : 'text-custom-cyan'}`} style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>Show More</span>
+                  <AiOutlineEllipsis className={`text-2xl md:hidden ${!isDarkMode ? '' : 'text-custom-cyan'}`} />
+
+                </button>
+              </div>
+              
+
+              <Transition appear show={isCheckoutModalOpen} as={Fragment}>
+                <Dialog as="div" className="fixed inset-0 z-10 overflow-y-auto" onClose={closeCheckoutModal}>
+                  <div className="min-h-screen px-4 text-center">
+                    <Dialog.Overlay className="fixed inset-0 bg-black opacity-30" />
+                    
+                    <span className="inline-block h-screen align-middle" aria-hidden="true">&#8203;</span>
+                    
+                    <div className="inline-block p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-custom-gradient shadow-xl rounded-2xl">
+                      <Dialog.Title as="h3" className="text-lg font-medium leading-6 titleColor">
+                        Additional:
+                      </Dialog.Title>
+                      <div className="mt-2 textColor">
+                        <p className='py-1'>OpenCV</p>
+                      </div>
+                      <div className="mt-4">
+                        <button type="button" className="text-custom-cyan hover:text-teal-900" style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }} onClick={closeCheckoutModal}>
+                          Close
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </Dialog>
+              </Transition>
+          </div>
           
           {/* ChatGPT Clone */}
           <div className={`glass p-10 rounded-xl my-10 hover:bg-white hover:bg-opacity-5 transition duration-300 ${!isDarkMode ? 'bg-white' : 'boxColor'}`}>
@@ -263,10 +393,10 @@ export default function Home() {
               <AiFillFolderOpen className='text-xl'/>
             </div>
             <h3 className='text-center text-lg font-medium pt-8 pb-2 titleColor' style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>
-              ChatGPT Clone
+              Conversational AI Assistant
             </h3>
             <p className='py-2 textColor'>
-            I developed a ChatGPT clone using Flask and GPT-4 OpenAI API, which handles multiple chat sessions and offer real-time interaction with the AI model. The application features LangChain for fine-tuning the GPT-4 model, allowing it to learn and respond to new information. I used Next.js and Tailwind CSS for a responsive user interface. The backend relies on MySQL for data management. The entire application is hosted on AWS.
+            I developed a virtual AI assistant using Flask and GPT-4 OpenAI API, which handles multiple chat sessions and offer real-time interaction with the AI model. The application features LangChain for fine-tuning the GPT-4 model, allowing it to learn and respond to new information. I used Next.js and Tailwind CSS for a responsive user interface. The backend relies on MySQL for data management. The entire application is hosted on AWS.
             </p>
             <h4 className='text-center py-4 titleColor' style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>
               Main Programming languages and tools used:
