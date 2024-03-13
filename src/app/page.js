@@ -4,6 +4,7 @@ import { useEffect, useState, useCallback, Fragment, useMemo } from 'react';
 import {AiFillLinkedin, AiFillMail, AiFillGithub, AiOutlineEllipsis, AiFillFolderOpen} from 'react-icons/ai'
 import { BiArrowToRight } from "react-icons/bi";
 import { BsCodeSlash,  } from "react-icons/bs";
+import { PiCarProfileFill } from 'react-icons/pi';
 import DarkModeToggle from './DarkModeToggle'
 import { Col, Container, Row } from 'react-bootstrap';
 import { Dialog, Transition } from '@headlessui/react';
@@ -164,18 +165,19 @@ export default function Home() {
     left: `${scrollProgress}%`,
     transform: 'translateX(-50%)', 
     transition: 'left 0.2s ease-out', 
+    zIndex: 1
   };
 
   return (
     <main className={`md:px-20 lg:px-20 px-10 transition ${isDarkMode ? 'bg-custom-gradient text-white' : 'bg-custom-graident-light bg-color-text'}`}>
 
-      {/** 
+       
       <div style={iconStyle}>
         <PiCarProfileFill
           className={`text-2xl z-1 ${!isDarkMode ? 'bg-color-text' : 'text-custom-cyan'} ${isJumping ? 'jump' : ''}`}
         />
       </div>  
-      */}
+      
 
       <section className="min-h-screen">
         <nav className='py-10 mb-12 flex justify-between'>
