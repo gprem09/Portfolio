@@ -30,63 +30,6 @@ export default function Home() {
     'Listen podcast', 'Table tennis', 'Gym'
   ];
 
-  const openMRIModal = () => {
-    setMRIModalOpen(true);
-  };
-
-  const closeMRIModal = () => {
-    setMRIModalOpen(false);
-  };
-
-
-  const openCheckoutModal = () => {
-    setCheckoutModalOpen(true);
-  };
-
-  const closeCheckoutModal = () => {
-    setCheckoutModalOpen(false);
-  };
-
-  const openCHATGPTModal = () => {
-    setCHATGPTModalOpen(true);
-  };
-
-  const closeCHATGPTModal = () => {
-    setCHATGPTModalOpen(false);
-  };
-
-  const openFullStackModal = () => {
-    setFullStackModalOpen(true);
-  };
-
-  const closeFullStackModal = () => {
-    setFullStackModalOpen(false);
-  };
-
-  const openAngularModal = () => {
-    setAngularModalOpen(true);
-  };
-
-  const closeAngularModal = () => {
-    setAngularModalOpen(false);
-  };
-
-  const open2DModal = () => {
-    set2DModalOpen(true);
-  };
-
-  const close2DModal = () => {
-    set2DModalOpen(false);
-  };
-
-  const openNoteModal = () => {
-    setNoteModalOpen(true);
-  };
-
-  const closeNoteModal = () => {
-    setNoteModalOpen(false);
-  };
-
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [shouldBlink, setShouldBlink] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
@@ -295,41 +238,7 @@ export default function Home() {
               <div className='flex justify-center gap-4 textColor'>
                 <p className='py-1'>Python</p>
                 <p className='py-1'>PyTorch</p>
-                <button 
-                  className='text-teal-500 hover:text-teal-700 transition duration-300' 
-                  onClick={openMRIModal}>
-                  
-                  <span className={`hidden md:inline ${!isDarkMode ? '' : 'text-custom-cyan'}`} style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>Show More</span>
-                  <AiOutlineEllipsis className={`text-2xl md:hidden ${!isDarkMode ? '' : 'text-custom-cyan'}`} />
-
-                </button>
               </div>
-              
-
-              <Transition appear show={isMRIModalOpen} as={Fragment}>
-                <Dialog as="div" className="fixed inset-0 z-10 overflow-y-auto" onClose={closeMRIModal}>
-                  <div className="min-h-screen px-4 text-center">
-                    <Dialog.Overlay className="fixed inset-0 bg-black opacity-30" />
-                    
-                    <span className="inline-block h-screen align-middle" aria-hidden="true">&#8203;</span>
-                    
-                    <div className="inline-block p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-custom-gradient shadow-xl rounded-2xl">
-                      <Dialog.Title as="h3" className="text-lg font-medium leading-6 titleColor">
-                        Additional:
-                      </Dialog.Title>
-                      <div className="mt-2 textColor">
-                        <p className='py-1'>OpenCV</p>
-                        <p className='py-1'>Numpy</p>
-                      </div>
-                      <div className="mt-4">
-                        <button type="button" className="text-custom-cyan hover:text-teal-900" style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }} onClick={closeMRIModal}>
-                          Close
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </Dialog>
-              </Transition>
           </div>
 
           {/* Self Checkout */}
@@ -350,40 +259,7 @@ export default function Home() {
               <div className='flex justify-center gap-4 textColor'>
                 <p className='py-1'>Python</p>
                 <p className='py-1'>PyTorch</p>
-                <button 
-                  className='text-teal-500 hover:text-teal-700 transition duration-300' 
-                  onClick={openCheckoutModal}>
-                  
-                  <span className={`hidden md:inline ${!isDarkMode ? '' : 'text-custom-cyan'}`} style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>Show More</span>
-                  <AiOutlineEllipsis className={`text-2xl md:hidden ${!isDarkMode ? '' : 'text-custom-cyan'}`} />
-
-                </button>
               </div>
-              
-
-              <Transition appear show={isCheckoutModalOpen} as={Fragment}>
-                <Dialog as="div" className="fixed inset-0 z-10 overflow-y-auto" onClose={closeCheckoutModal}>
-                  <div className="min-h-screen px-4 text-center">
-                    <Dialog.Overlay className="fixed inset-0 bg-black opacity-30" />
-                    
-                    <span className="inline-block h-screen align-middle" aria-hidden="true">&#8203;</span>
-                    
-                    <div className="inline-block p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-custom-gradient shadow-xl rounded-2xl">
-                      <Dialog.Title as="h3" className="text-lg font-medium leading-6 titleColor">
-                        Additional:
-                      </Dialog.Title>
-                      <div className="mt-2 textColor">
-                        <p className='py-1'>OpenCV</p>
-                      </div>
-                      <div className="mt-4">
-                        <button type="button" className="text-custom-cyan hover:text-teal-900" style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }} onClick={closeCheckoutModal}>
-                          Close
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </Dialog>
-              </Transition>
           </div>
           
           {/* ChatGPT Clone */}
@@ -406,42 +282,7 @@ export default function Home() {
               <div className='flex justify-center gap-4 textColor'>
                 <p className='py-1'>Flask</p>
                 <p className='py-1'>NextJS</p>
-                <button 
-                  className='text-teal-500 hover:text-teal-700 transition duration-300' 
-                  onClick={openCHATGPTModal}>
-                  
-                  <span className={`hidden md:inline ${!isDarkMode ? '' : 'text-custom-cyan'}`} style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>Show More</span>
-                  <AiOutlineEllipsis className={`text-2xl md:hidden ${!isDarkMode ? '' : 'text-custom-cyan'}`} />
-
-                </button>
               </div>
-              
-
-              <Transition appear show={isCHATGPTModalOpen} as={Fragment}>
-                <Dialog as="div" className="fixed inset-0 z-10 overflow-y-auto" onClose={closeCHATGPTModal}>
-                  <div className="min-h-screen px-4 text-center">
-                    <Dialog.Overlay className="fixed inset-0 bg-black opacity-30" />
-                    
-                    <span className="inline-block h-screen align-middle" aria-hidden="true">&#8203;</span>
-                    
-                    <div className="inline-block p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-custom-gradient shadow-xl rounded-2xl">
-                      <Dialog.Title as="h3" className="text-lg font-medium leading-6 titleColor">
-                        Additional:
-                      </Dialog.Title>
-                      <div className="mt-2 textColor">
-                        <p className='py-1'>Tailwind CSS</p>
-                        <p className='py-1'>MySQL</p>
-                        <p className='py-1'>AWS</p>
-                      </div>
-                      <div className="mt-4">
-                        <button type="button" className="text-custom-cyan hover:text-teal-900" style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }} onClick={closeCHATGPTModal}>
-                          Close
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </Dialog>
-              </Transition>
           </div>
 
           {/* Full Stack Development */}
@@ -464,96 +305,7 @@ export default function Home() {
               <div className='flex justify-center gap-4 textColor'>
                 <p className='py-1'>JavaScript</p>
                 <p className='py-1'>MongoDB</p>
-                <button 
-                  className='text-teal-500 hover:text-teal-700 transition duration-300' 
-                  onClick={openFullStackModal}>
-                  
-                  <span className={`hidden md:inline ${!isDarkMode ? '' : 'text-custom-cyan'}`} style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>Show More</span>
-                  <AiOutlineEllipsis className={`text-2xl md:hidden ${!isDarkMode ? '' : 'text-custom-cyan'}`} />
-
-                </button>
               </div>
-              
-
-              <Transition appear show={isFullStackModalOpen} as={Fragment}>
-                <Dialog as="div" className="fixed inset-0 z-10 overflow-y-auto" onClose={closeFullStackModal}>
-                  <div className="min-h-screen px-4 text-center">
-                    <Dialog.Overlay className="fixed inset-0 bg-black opacity-30" />
-                    
-                    <span className="inline-block h-screen align-middle" aria-hidden="true">&#8203;</span>
-                    
-                    <div className="inline-block p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-custom-gradient shadow-xl rounded-2xl">
-                      <Dialog.Title as="h3" className="text-lg font-medium leading-6 titleColor">
-                        Additional:
-                      </Dialog.Title>
-                      <div className="mt-2 textColor">
-                        <p className='py-1'>Express</p>
-                        <p className='py-1'>Angular</p>
-                        <p className='py-1'>NodeJS</p>
-                      </div>
-                      <div className="mt-4">
-                        <button type="button" className="text-custom-cyan hover:text-teal-900" style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }} onClick={closeFullStackModal}>
-                          Close
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </Dialog>
-              </Transition>
-          </div>
-
-          {/* Angular Web Development */}
-          <div className={`glass p-10 rounded-xl my-10 hover:bg-white hover:bg-opacity-5 transition duration-300 ${!isDarkMode ? 'bg-white' : 'boxColor'}`}>
-            <div className='flex justify-between'>
-              <a href="https://github.com/gprem09/Pig-Report-Angular" target="_blank" rel="noopener noreferrer">
-                <AiFillGithub className='text-xl'/>
-              </a>
-              <AiFillFolderOpen className='text-xl'/>
-            </div>
-            <h3 className='text-center text-lg font-medium pt-8 pb-2 titleColor' style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>
-              Angular Web Development
-            </h3>
-            <p className='py-2 textColor'>
-            I built an Angular web app for reporting and tracking missing pigs, featuring interactive tools and map filters using the Leaflet API. It efficiently manages data with CRUD operations and REST APIs, offering user-friendly forms and error feedback for an intuitive experience.
-            </p>
-            <h4 className='text-center py-4 titleColor' style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>
-              Main Programming languages and tools used:
-            </h4>
-              <div className='flex justify-center gap-4 textColor'>
-                <p className='py-1'>Angular</p>
-                <p className='py-1'>TypeScript</p>
-                <button 
-                  className='text-teal-500 hover:text-teal-700 transition duration-300' 
-                  onClick={openAngularModal}>
-                  <span className={`hidden md:inline ${!isDarkMode ? '' : 'text-custom-cyan'}`} style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>Show More</span>
-                  <AiOutlineEllipsis className={`text-2xl md:hidden ${!isDarkMode ? '' : 'text-custom-cyan'}`} style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }} />
-                </button>
-              </div>
-              <Transition appear show={isAngularModalOpen} as={Fragment}>
-                <Dialog as="div" className="fixed inset-0 z-10 overflow-y-auto" onClose={closeAngularModal}>
-                  <div className="min-h-screen px-4 text-center">
-                    <Dialog.Overlay className="fixed inset-0 bg-black opacity-30" />
-                    
-                    <span className="inline-block h-screen align-middle" aria-hidden="true">&#8203;</span>
-                    
-                    <div className="inline-block p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-custom-gradient shadow-xl rounded-2xl">
-                      <Dialog.Title as="h3" className="text-lg font-medium leading-6 titleColor">
-                        Additional:
-                      </Dialog.Title>
-                      <div className="mt-2 textColor">
-                        <p className='py-1'>HTML</p>
-                        <p className='py-1'>CSS</p>
-                      </div>
-                      <div className="mt-4">
-                        <button type="button" className="text-custom-cyan hover:text-teal-700" onClick={closeAngularModal}>
-                          Close
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </Dialog>
-              </Transition>
-
           </div>
 
           {/* 2d-Arcade Game */}
@@ -576,37 +328,7 @@ export default function Home() {
               <div className='flex justify-center gap-4 textColor'>
                 <p className='py-1'>Java</p>
                 <p className='py-1'>Maven</p>
-                <button 
-                  className='text-teal-500 hover:text-teal-700 transition duration-300' 
-                  onClick={open2DModal}>
-                  <span className={`hidden md:inline ${!isDarkMode ? '' : 'text-custom-cyan'}`} style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>Show More</span>
-                  <AiOutlineEllipsis className={`text-2xl md:hidden ${!isDarkMode ? '' : 'text-custom-cyan'}`} style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }} />
-                </button>
               </div>
-              <Transition appear show={is2DModalOpen} as={Fragment}>
-                <Dialog as="div" className="fixed inset-0 z-10 overflow-y-auto" onClose={close2DModal}>
-                  <div className="min-h-screen px-4 text-center">
-                    <Dialog.Overlay className="fixed inset-0 bg-black opacity-30" />
-                    
-                    <span className="inline-block h-screen align-middle" aria-hidden="true">&#8203;</span>
-                    
-                    <div className="inline-block p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-custom-gradient shadow-xl rounded-2xl">
-                      <Dialog.Title as="h3" className="text-lg font-medium leading-6 titleColor">
-                        Additional:
-                      </Dialog.Title>
-                      <div className="mt-2 textColor">
-                        <p className='py-1'>JUnit</p>
-                        <p className='py-1'>Swing (GUI)</p>
-                      </div>
-                      <div className="mt-4">
-                        <button type="button" className="text-custom-cyan hover:text-teal-700" onClick={close2DModal}>
-                          Close
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </Dialog>
-              </Transition>
           </div>
 
           {/* cShell */}
@@ -629,61 +351,6 @@ export default function Home() {
               <div className='flex justify-center textColor'>
                 <p className='py-1'>C Language</p>
               </div>
-          </div>
-
-          {/* NoteTaking App */}
-          <div className={`glass p-10 rounded-xl my-10 hover:bg-white hover:bg-opacity-5 transition duration-300 ${!isDarkMode ? 'bg-white' : 'boxColor'}`}>
-            <div className='flex justify-between'>
-              <a href="https://github.com/gprem09/Docker-CRUD-App" target="_blank" rel="noopener noreferrer">
-                <AiFillGithub className='text-xl'/>
-              </a>
-              <AiFillFolderOpen className='text-xl'/>
-            </div>
-            <h3 className='text-center text-lg font-medium pt-8 pb-2 titleColor' style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>
-              Note-Taking App
-            </h3>
-            <p className='py-2 textColor'>
-            I developed a full-stack note-taking app with CRUD functionality, using Express.js and MongoDB for the backend, and EJS for the frontend. It features efficient pagination and an organized dashboard. Deployed with Docker, it ensures consistent operation across different environments.
-            </p>
-            <h4 className='text-center py-4 titleColor' style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>
-              Main Programming languages and tools used:
-            </h4>
-            <div className='flex justify-center gap-4 textColor'>
-                <p className='py-1'>JavaScript</p>
-                <p className='py-1'>Docker</p>
-                <button 
-                  className='text-custom-cyan hover:text-teal-900 transition duration-300' 
-                  onClick={openNoteModal}>
-                  <span className={`hidden md:inline ${!isDarkMode ? '' : 'text-custom-cyan'}`} style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>Show More</span>
-                  <AiOutlineEllipsis className={`text-2xl md:hidden ${!isDarkMode ? '' : 'text-custom-cyan'}`} style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }} />
-                </button>
-              </div>
-
-              <Transition appear show={isNoteModalOpen} as={Fragment}>
-                <Dialog as="div" className="fixed inset-0 z-10 overflow-y-auto" onClose={closeNoteModal}>
-                  <div className="min-h-screen px-4 text-center">
-                    <Dialog.Overlay className="fixed inset-0 bg-black opacity-30" />
-                    
-                    <span className="inline-block h-screen align-middle" aria-hidden="true">&#8203;</span>
-                    
-                    <div className="inline-block p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-custom-gradient shadow-xl rounded-2xl">
-                      <Dialog.Title as="h3" className="text-lg font-medium leading-6 titleColor">
-                        Additional:
-                      </Dialog.Title>
-                      <div className="mt-2 textColor">
-                        <p className='py-1'>Express</p>
-                        <p className='py-1'>MongoDB</p>
-                        <p className='py-1'>Embedded JS</p>
-                      </div>
-                      <div className="mt-4">
-                        <button type="button" className="text-teal-500 hover:text-teal-700" onClick={closeNoteModal}>
-                          Close
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </Dialog>
-              </Transition>
           </div>
 
           {/* Arduino Gesture Control Car */}
