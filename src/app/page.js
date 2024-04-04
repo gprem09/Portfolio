@@ -241,10 +241,11 @@ export default function Home() {
               Prem A.I.
             </h3>
             <p className='py-2 textColor'>
-            
+            Prem AI is a virtual assistant that learns efficiently when you add information to a specific folder. It makes the process of fine-tuning much simpler. 
             </p>
             <div className='flex justify-center py-10 gap-4 textColor'>
               <p className='py-1'>Flask</p>
+              <p className='py-1'>LangChain</p>
               <p className='py-1'>NextJS</p>
             </div>
           </div>
