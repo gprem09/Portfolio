@@ -7,18 +7,10 @@ import { BsCodeSlash,  } from "react-icons/bs";
 import { PiCarProfileFill } from 'react-icons/pi';
 import DarkModeToggle from './DarkModeToggle'
 import { Col, Container, Row } from 'react-bootstrap';
-import { Dialog, Transition } from '@headlessui/react';
 
 export default function Home() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isJumping, setIsJumping] = useState(false);
-  const [isMRIModalOpen, setMRIModalOpen] = useState(false);
-  const [isCheckoutModalOpen, setCheckoutModalOpen] = useState(false);
-  const [isCHATGPTModalOpen, setCHATGPTModalOpen] = useState(false);
-  const [isFullStackModalOpen, setFullStackModalOpen] = useState(false);
-  const [isAngularModalOpen, setAngularModalOpen] = useState(false);
-  const [is2DModalOpen, set2DModalOpen] = useState(false);
-  const [isNoteModalOpen, setNoteModalOpen] = useState(false);
   const skills = [
     'Next.js', 'React.js', 'Node.js', 
     'Angular', 'JavaScript', 'HTML & CSS', 'Tailwind CSS',
@@ -165,7 +157,7 @@ export default function Home() {
                 <h1>Hi, I&apos;m <span className={`fonts transition ${!isDarkMode ? 'bg-color-text' : 'text-custom-cyan'}`}>Gnanavel</span> Premnath<span className={`p-1 ${!isDarkMode ? 'bg-color-text' : 'text-custom-cyan'}`}>;</span></h1>
 
                 <h2>
-                  <BsCodeSlash className={`${!isDarkMode ? 'bg-color-text' : 'text-custom-cyan'}`} style={{ display: 'inline-block' }} /> Am I <span className={`wrap fonts transition ${!isDarkMode ? 'bg-color-text' : 'text-custom-cyan'}`}>
+                  <BsCodeSlash className={`${!isDarkMode ? 'bg-color-text' : 'text-custom-cyan'}`} style={{ display: 'inline-block' }} /> Am I a <span className={`wrap fonts transition ${!isDarkMode ? 'bg-color-text' : 'text-custom-cyan'}`}>
                     {text}
                     <span className={`cursor ${shouldBlink ? 'blinking-cursor' : ''}`}>|</span>
                   </span> Developer?
@@ -213,7 +205,7 @@ export default function Home() {
         </section>
 
         <h1 className={`fonts project ${!isDarkMode ? 'light-mode-h' : 'textColor'}`}><BsCodeSlash style={{ display: 'inline-block', color: !isDarkMode ? 'rgb(10,25,47)' : '#65FFDA' }} /> personal experiences</h1>
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-4 p-4'>
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-4 p-4'>
 
           {/* Brain Tumour */}
           <div className={`glass p-10 rounded-xl my-10 hover:bg-white hover:bg-opacity-5 transition duration-300 ${!isDarkMode ? 'bg-white' : 'boxColor'}`}>
@@ -227,59 +219,34 @@ export default function Home() {
               Brain Tumour Detection
             </h3>
             <p className='py-2 textColor'>
-            Developed a neural network using PyTorch for brain tumor detection, achieving 100% accuracy. This involved crafting custom convolutional networks and utilizing OpenCV for image analysis, and implementing custom training loops to better understand neural network fundamentals.
+            A system to sort MRI scans and find brain tumours. It was tested to be accurate and makes checking scans faster and cheaper. 
             </p>
-            <h4 className='text-center py-4 titleColor' style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>
-              Main Programming languages and tools used:
-            </h4>
-              <div className='flex justify-center gap-4 textColor'>
-                <p className='py-1'>Python</p>
-                <p className='py-1'>PyTorch</p>
-              </div>
-          </div>
-
-          {/* Self Checkout */}
-          <div className={`glass p-10 rounded-xl my-10 hover:bg-white hover:bg-opacity-5 transition duration-300 ${!isDarkMode ? 'bg-white' : 'boxColor'}`}>
-            <div className='flex justify-between'>
-              <AiFillGithub className='text-xl'/>
-              <AiFillFolderOpen className='text-xl'/>
+            <div className='flex justify-center py-10 gap-4 textColor'>
+              <p className='py-1'>Python</p>
+              <p className='py-1'>PyTorch</p>
+              <p className='py-1'>OpenCV</p>
+              <p className='py-1'>Image Processing</p>
             </div>
-            <h3 className='text-center text-lg font-medium pt-8 pb-2 titleColor' style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>
-              Smart Self-Checkout
-            </h3>
-            <p className='py-2 textColor'>
-            Developed a smart self-checkout system using a custom-trained YOLO model to recognize and price over 100 grocery items, incorporating OpenCV for advanced image analysis, which significantly improved the accuracy of item identification. This system streamlines the checkout process by providing real-time, automated calculations of total costs.
-            </p>
-            <h4 className='text-center py-4 titleColor' style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>
-              Main Programming languages and tools used:
-            </h4>
-              <div className='flex justify-center gap-4 textColor'>
-                <p className='py-1'>Python</p>
-                <p className='py-1'>PyTorch</p>
-              </div>
           </div>
           
           {/* ChatGPT Clone */}
           <div className={`glass p-10 rounded-xl my-10 hover:bg-white hover:bg-opacity-5 transition duration-300 ${!isDarkMode ? 'bg-white' : 'boxColor'}`}>
             <div className='flex justify-between'>
-              <a href="https://github.com/gprem09/CHATGPT-CLONE" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/gprem09/Prem-A.I." target="_blank" rel="noopener noreferrer">
                 <AiFillGithub className='text-xl'/>
               </a>
               <AiFillFolderOpen className='text-xl'/>
             </div>
             <h3 className='text-center text-lg font-medium pt-8 pb-2 titleColor' style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>
-              Conversational AI Assistant
+              Prem A.I.
             </h3>
             <p className='py-2 textColor'>
-            I developed a virtual AI assistant using Flask and GPT-4 OpenAI API, which handles multiple chat sessions and offer real-time interaction with the AI model. The application features LangChain for fine-tuning the GPT-4 model, allowing it to learn and respond to new information. I used Next.js and Tailwind CSS for a responsive user interface. The backend relies on MySQL for data management. The entire application is hosted on AWS.
+            
             </p>
-            <h4 className='text-center py-4 titleColor' style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>
-              Main Programming languages and tools used:
-            </h4>
-              <div className='flex justify-center gap-4 textColor'>
-                <p className='py-1'>Flask</p>
-                <p className='py-1'>NextJS</p>
-              </div>
+            <div className='flex justify-center py-10 gap-4 textColor'>
+              <p className='py-1'>Flask</p>
+              <p className='py-1'>NextJS</p>
+            </div>
           </div>
 
           {/* Full Stack Development */}
@@ -294,15 +261,12 @@ export default function Home() {
               Full Stack Development
             </h3>
             <p className='py-2 textColor'>
-            I created a multimedia review site using the MEAN stack to enhance how people interact with movie and TV reviews. It integrates with the TMDb API for easy access to media information, allowing genre-based searches. The site uses JWT for secure user authentication and supports create, read, update, and delete operations. MongoDB is used for database, and it is hosted on Google Cloud Platform.
+            
             </p>
-            <h4 className='text-center py-4 titleColor' style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>
-              Main Programming languages and tools used:
-            </h4>
-              <div className='flex justify-center gap-4 textColor'>
-                <p className='py-1'>JavaScript</p>
-                <p className='py-1'>MongoDB</p>
-              </div>
+            <div className='flex justify-center py-10 gap-4 textColor'>
+              <p className='py-1'>JavaScript</p>
+              <p className='py-1'>MongoDB</p>
+            </div>
           </div>
 
           {/* 2d-Arcade Game */}
