@@ -212,9 +212,6 @@ export default function Home() {
           </div>
         </section>
 
-
-
-
         <h1 className={`fonts project ${!isDarkMode ? 'light-mode-h' : 'textColor'}`}><BsCodeSlash style={{ display: 'inline-block', color: !isDarkMode ? 'rgb(10,25,47)' : '#65FFDA' }} /> personal experiences</h1>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-4 p-4'>
 
@@ -372,7 +369,6 @@ export default function Home() {
                 <p className='py-1'>C++ Language</p>
               </div>
           </div>
-
         </div>
 
         <div className='text-center textColor p-5'>
