@@ -163,7 +163,9 @@ export default function Home() {
                   </span> Developer?
                 </h2>
                 
-                <p className='ErikasBuero'>Exploring the world of Computer Science at Simon Fraser University in the ever-rainy Vancouver, BC, I&apos;ve found myself caught in a love triangle between artificial intelligence, full-stack development, and game development. It&apos;s like a techy soap opera, and I&apos;m here for all the drama!</p>
+                <p className='ErikasBuero'>
+                  Exploring the world of Computer Science at Simon Fraser University in the ever-rainy Vancouver, BC, I&apos;ve found myself caught in a love triangle between artificial intelligence, full-stack development, and game development. It&apos;s like a techy soap opera, and I&apos;m here for all the drama!
+                </p>
               </Col>
             </Row>
           </Container>
@@ -287,15 +289,12 @@ export default function Home() {
             <p className='py-2 textColor'>
             Collaborated with team of 4 to create the "Spirit Experiment", a 2D pixel maze game. Built mazes with a recursive algorithm, placing rewards and special rooms. 
             </p>
-            <h4 className='text-center py-4 titleColor' style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>
-              Main Programming languages and tools used:
-            </h4>
-              <div className='flex justify-center gap-4 textColor'>
-                <p className='py-1'>Java</p>
-                <p className='py-1'>Maven</p>
-                <p className='py-1'>JUnit</p>
-                <p className='py-1'>Scrum</p>
-              </div>
+            <div className='flex justify-center py-10 gap-4 textColor'>
+              <p className='py-1'>Java</p>
+              <p className='py-1'>Maven</p>
+              <p className='py-1'>JUnit</p>
+              <p className='py-1'>Scrum</p>
+            </div>
           </div>
 
           {/* cShell */}
@@ -310,14 +309,11 @@ export default function Home() {
               myShell
             </h3>
             <p className='py-2 textColor'>
-            I developed myShell, a custom C-based shell featuring command execution, environment management, and history logging. It highlights my proficiency in system programming, utilizing complex C and UNIX concepts like process forking and piping.
+            A custom built operating system that allows command execution, environment control, history recording etc.
             </p>
-            <h4 className='text-center py-4 titleColor' style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>
-              Main Programming languages and tools used:
-            </h4>
-              <div className='flex justify-center textColor'>
-                <p className='py-1'>C Language</p>
-              </div>
+            <div className='flex py-10 justify-center textColor'>
+              <p className='py-1'>C Language</p>
+            </div>
           </div>
 
           {/* Arduino Gesture Control Car */}
@@ -330,14 +326,11 @@ export default function Home() {
               Arduino Gesture Control Car
             </h3>
             <p className='py-2 textColor'>
-              I developed a gesture-controlled car using Arduino, highlighting my electronics expertise. The project featured a system that interprets finger gestures for intuitive vehicle control, programmed in C++ with the Arduino IDE for responsive and precise operation.
+            A gesture-controlled car with Arduino that uses individual finger movement for fun and easy car control.
             </p>
-            <h4 className='text-center py-4 titleColor' style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>
-              Main Programming languages and tools used:
-            </h4>
-            <div className='flex justify-center textColor'>
+            <div className='flex justify-center py-10 textColor'>
                 <p className='py-1'>C++ Language</p>
-              </div>
+            </div>
           </div>
         </div>
 
