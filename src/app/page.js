@@ -8,19 +8,12 @@ import { PiCarProfileFill } from 'react-icons/pi';
 import DarkModeToggle from './DarkModeToggle'
 import { Col, Container, Row } from 'react-bootstrap';
 import Projects from 'src/components/project.js';
+import AboutMe from 'src/components/aboutMe.js';
+import { skills, hobbies } from 'src/constants/personalData.js';
 
 export default function Home() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isJumping, setIsJumping] = useState(false);
-  const skills = [
-    'python', 'c++', 'c',
-    'java', 'javascript', 'react.js', 
-  ];
-
-  const hobbies = [
-    'video editing', 'photo editing', 'vfx',
-    '3d animation', 'table tennis', 'gym'
-  ];
 
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [shouldBlink, setShouldBlink] = useState(false);
@@ -167,40 +160,7 @@ export default function Home() {
           </Container>
         </section>
 
-
-
-        <section className={`aboutMe ${!isDarkMode ? 'light-mode' : ''}`}>
-          <div>
-            <h1 className={`fonts text-4vw lg:text-3vw xl:text-2.5vw 2xl:text-2vw ${!isDarkMode ? 'light-mode-h' : 'textColor'}`}>
-              <BsCodeSlash style={{ display: 'inline-block', color: !isDarkMode ? 'rgb(10,25,47)' : '#65FFDA' }} /> about me
-            </h1>
-            <p className={`py-4 ${!isDarkMode ? 'textColor' : 'titleColor'}`}>
-            I am currently pursuing my Bachelor's degree at Simon Fraser University in Vancouver, BC. I am all about coding, particularly in creating complex applications that make people say "wow." My goal is to help communities and develop software with a team that not only meets but also exceeds expectations.
-            </p>
-
-            <p className={`py-4 ${!isDarkMode ? 'light-mode-h2' : 'titleColor'}`}>Here are some languages that I am currently working with;</p>
-
-            <div className="grid grid-cols-3 gap-4 max-w-2xl aboutMeP">
-              {skills.map((skill, index) => (
-                <div key={index} className="flex items-center">
-                  <BiArrowToRight style={{ marginRight: '5px', color: !isDarkMode ? 'rgb(10,25,47)' : '#65FFDA' }} />
-                  {skill}
-                </div>
-              ))}
-            </div>
-            
-            <p className={`py-5 ${!isDarkMode ? 'light-mode-h2' : 'titleColor'}`}>When I&apos;m not working, I like to spend my time;</p>
-
-            <div className="grid grid-cols-3 gap-4 max-w-2xl aboutMeP">
-              {hobbies.map((hobby, index) => (
-                <div key={index} className="flex items-center">
-                  <BiArrowToRight style={{ marginRight: '5px', color: !isDarkMode ? 'rgb(10,25,47)' : '#65FFDA' }} />
-                  {hobby}
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <AboutMe isDarkMode={isDarkMode} skills={skills} hobbies={hobbies} />
 
         <Projects isDarkMode={isDarkMode} />
 
