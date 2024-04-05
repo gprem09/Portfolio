@@ -6,7 +6,7 @@ import 'src/app/globals.css';
 const Projects = ({ isDarkMode }) => {
   return (
     <div>
-      <h1 className={`fonts project ${!isDarkMode ? 'light-mode-h' : 'textColor'}`}><BsCodeSlash style={{ display: 'inline-block', color: !isDarkMode ? 'rgb(10,25,47)' : '#65FFDA' }} /> projects</h1>
+      <h1 className={`fonts project_h1 ${!isDarkMode ? 'light-mode-h' : 'textColor'}`}><BsCodeSlash style={{ display: 'inline-block', color: !isDarkMode ? 'rgb(10,25,47)' : '#65FFDA' }} /> projects</h1>
         <div className='grid grid-cols-1 md:grid-cols-3 gap-4 p-4'>
 
           {/* MRI analysis */}

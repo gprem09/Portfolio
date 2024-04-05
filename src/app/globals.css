@@ -60,9 +60,9 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.aboutMe{
+/* .aboutMe{
   padding: 12% 0;
-}
+} */
 
 @media screen and (max-width: 768px) {
   .banner {
@@ -74,14 +74,17 @@ body {
   }
 }
 
-.project{
+.project {
   padding-top: 7%;
+}
+
+.project_h1 {
   font-size: 3vw;
 }
 
-.banner {
+/* .banner {
   padding: 10% 0;
-}
+}  */
 
 .banner h1 {
   color: #CBD7F6;
