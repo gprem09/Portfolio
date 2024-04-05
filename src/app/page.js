@@ -107,7 +107,7 @@ export default function Home() {
         />
       </div>  
       
-      <Navbar isDarkMode={isDarkMode} toggleDarkMode={() => setIsDarkMode(!isDarkMode)} />
+      <Navbar isDarkMode={isDarkMode} toggleDarkMode={setIsDarkMode} />
 
       <section className={`banner ${!isDarkMode ? 'light-mode' : ''}`} id='home'>
         <Container fluid>

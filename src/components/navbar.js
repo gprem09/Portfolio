@@ -20,10 +20,10 @@ const Navbar = ({ isDarkMode, toggleDarkMode }) => {
           
           <ul className='flex item-center'>
             <li>
-              <DarkModeToggle 
-                isDarkMode={isDarkMode} 
-                toggleDarkMode={() => setIsDarkMode(!isDarkMode)}
-              />
+            <DarkModeToggle 
+              isDarkMode={isDarkMode} 
+              toggleDarkMode={() => toggleDarkMode(!isDarkMode)}
+            />
             </li>
             <li>
               <a className={`px-3 py-4 ml-8 transition ${!isDarkMode ? 'bg-color-text' : 'text-custom-cyan'} hover:text-teal-700`} 
