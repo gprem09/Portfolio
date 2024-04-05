@@ -216,7 +216,7 @@ export default function Home() {
               <AiFillFolderOpen className='text-xl'/>
             </div>
             <h3 className='text-center text-lg font-medium pt-8 pb-2 titleColor' style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>
-              Brain Tumour Detection
+              MRI Analysis
             </h3>
             <p className='py-2 textColor'>
             A system to sort MRI scans and find brain tumours. It was tested to be accurate and makes checking scans faster and cheaper. 
@@ -259,13 +259,16 @@ export default function Home() {
               <AiFillFolderOpen className='text-xl'/>
             </div>
             <h3 className='text-center text-lg font-medium pt-8 pb-2 titleColor' style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>
-              Full Stack Development
+              TubeTalk
             </h3>
             <p className='py-2 textColor'>
-            
+            A review platform for films and TV that simplifies discovering and discussing critiques. It searches by genre through a media database and uses secure login. 
             </p>
             <div className='flex justify-center py-10 gap-4 textColor'>
               <p className='py-1'>JavaScript</p>
+              <p className='py-1'>NodeJS</p>
+              <p className='py-1'>Angular</p>
+              <p className='py-1'>ExpressJS</p>
               <p className='py-1'>MongoDB</p>
             </div>
           </div>
@@ -279,10 +282,10 @@ export default function Home() {
               <AiFillFolderOpen className='text-xl'/>
             </div>
             <h3 className='text-center text-lg font-medium pt-8 pb-2 titleColor' style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>
-              2D-Arcade Game
+              Spirit Experiment
             </h3>
             <p className='py-2 textColor'>
-            I led a project to develop &quot;Spirit Experiment&quot;, a 2D arcade game, using Java Swing and Graphics2D for a responsive design. We adopted Agile Scrum methods for efficient workflow and used JUnit for rigorous testing, ensuring a reliable and enjoyable gaming experience.
+            Collaborated with team of 4 to create the "Spirit Experiment", a 2D pixel maze game. Built mazes with a recursive algorithm, placing rewards and special rooms. 
             </p>
             <h4 className='text-center py-4 titleColor' style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>
               Main Programming languages and tools used:
@@ -290,6 +293,8 @@ export default function Home() {
               <div className='flex justify-center gap-4 textColor'>
                 <p className='py-1'>Java</p>
                 <p className='py-1'>Maven</p>
+                <p className='py-1'>JUnit</p>
+                <p className='py-1'>Scrum</p>
               </div>
           </div>
 
