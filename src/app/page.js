@@ -12,7 +12,7 @@ export default function Home() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isJumping, setIsJumping] = useState(false);
   const skills = [
-    'python', 'c', 'c++',
+    'python', 'c++', 'c',
     'java', 'javascript', 'react.js', 
   ];
 
@@ -147,7 +147,6 @@ export default function Home() {
         </nav>
         <section className={`banner ${!isDarkMode ? 'light-mode' : ''}`} id='home'>
           <Container fluid>
-            {/* Use fluid for a full-width container */}
             <Row>
               <Col xs={12} md={6} xl={7}>
                 <h1>Hi, I&apos;m <span className={`fonts transition ${!isDarkMode ? 'bg-color-text' : 'text-custom-cyan'}`}>Gnanavel</span> Premnath<span className={`p-1 ${!isDarkMode ? 'bg-color-text' : 'text-custom-cyan'}`}>;</span></h1>
@@ -160,7 +159,7 @@ export default function Home() {
                 </h2>
                 
                 <p className='ErikasBuero'>
-                  Exploring the world of Computer Science at Simon Fraser University in the ever-rainy Vancouver, BC, I&apos;ve found myself caught in a love triangle between artificial intelligence, full-stack development, and game development. It&apos;s like a techy soap opera, and I&apos;m here for all the drama!
+                I'm passionate about creating applications that can solve real-world problems. I am always looking for new opportunities to learn and grow, and excited to engage with my fellow tech community and level up my professional game. 
                 </p>
               </Col>
             </Row>
@@ -174,8 +173,8 @@ export default function Home() {
             <h1 className={`fonts text-4vw lg:text-3vw xl:text-2.5vw 2xl:text-2vw ${!isDarkMode ? 'light-mode-h' : 'textColor'}`}>
               <BsCodeSlash style={{ display: 'inline-block', color: !isDarkMode ? 'rgb(10,25,47)' : '#65FFDA' }} /> about me
             </h1>
-            <p className={`py-5 ${!isDarkMode ? 'textColor' : 'titleColor'}`}>
-              I am currently in my 3rd year at Simon Fraser University, diligently working towards completing my degree. Immersed in a dynamic academic environment, I am passionate about making the most of my educational journey and exploring new opportunities that come my way.
+            <p className={`py-4 ${!isDarkMode ? 'textColor' : 'titleColor'}`}>
+            I am currently pursuing my Bachelor's degree at Simon Fraser University in Vancouver, BC. I am all about coding, particularly in creating complex applications that make people say "wow." My goal is to help communities and develop software with a team that not only meets but also exceeds expectations.
             </p>
 
             <p className={`py-4 ${!isDarkMode ? 'light-mode-h2' : 'titleColor'}`}>Here are some languages that I am currently working with;</p>
@@ -205,7 +204,7 @@ export default function Home() {
         <h1 className={`fonts project ${!isDarkMode ? 'light-mode-h' : 'textColor'}`}><BsCodeSlash style={{ display: 'inline-block', color: !isDarkMode ? 'rgb(10,25,47)' : '#65FFDA' }} /> personal experiences</h1>
         <div className='grid grid-cols-1 md:grid-cols-3 gap-4 p-4'>
 
-          {/* Brain Tumour */}
+          {/* MRI analysis */}
           <div className={`glass p-10 rounded-xl my-10 hover:bg-white hover:bg-opacity-5 transition duration-300 ${!isDarkMode ? 'bg-white' : 'boxColor'}`}>
             <div className='flex justify-between'>
               <a href="https://github.com/gprem09/Brain-Tumor-Detection" target="_blank" rel="noopener noreferrer">
@@ -227,7 +226,7 @@ export default function Home() {
             </div>
           </div>
           
-          {/* ChatGPT Clone */}
+          {/* Prem A.I. */}
           <div className={`glass p-10 rounded-xl my-10 hover:bg-white hover:bg-opacity-5 transition duration-300 ${!isDarkMode ? 'bg-white' : 'boxColor'}`}>
             <div className='flex justify-between'>
               <a href="https://github.com/gprem09/Prem-A.I." target="_blank" rel="noopener noreferrer">
@@ -248,7 +247,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Full Stack Development */}
+          {/* TubeTalk */}
           <div className={`glass p-10 rounded-xl my-10 hover:bg-white hover:bg-opacity-5 transition duration-300 ${!isDarkMode ? 'bg-white' : 'boxColor'}`}>
             <div className='flex justify-between'>
               <a href="https://github.com/gprem09/Fullstack-Web-Development" target="_blank" rel="noopener noreferrer">
@@ -271,7 +270,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* 2d-Arcade Game */}
+          {/* Spirit Experiment */}
           <div className={`glass p-10 rounded-xl my-10 hover:bg-white hover:bg-opacity-5 transition duration-300 ${!isDarkMode ? 'bg-white' : 'boxColor'}`}>
             <div className='flex justify-between'>
               <a href="https://github.com/gprem09/2d-Arcade-Java-Game" target="_blank" rel="noopener noreferrer">
@@ -319,7 +318,7 @@ export default function Home() {
               <AiFillFolderOpen className='text-xl'/>
             </div>
             <h3 className='text-center text-lg font-medium pt-8 pb-2 titleColor' style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>
-              Arduino Gesture Control Car
+              Auto-Pilot
             </h3>
             <p className='py-2 textColor'>
             A gesture-controlled car with Arduino that uses individual finger movement for fun and easy car control.
