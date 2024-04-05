@@ -10,6 +10,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 import Projects from 'src/components/project.js';
 import AboutMe from 'src/components/aboutMe.js';
 import { skills, hobbies } from 'src/constants/personalData.js';
+import Navbar from 'src/components/navbar.js';
 
 export default function Home() {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -106,71 +107,37 @@ export default function Home() {
         />
       </div>  
       
+      <Navbar isDarkMode={isDarkMode} toggleDarkMode={() => setIsDarkMode(!isDarkMode)} />
 
-      <section className="min-h-screen">
-        <nav className='py-10 mb-12 flex justify-between'>
-        <div className={`flex items-center gap-8 transition ${!isDarkMode ? 'bg-color-text' : 'text-custom-cyan'}`}>
-          <a href="https://www.linkedin.com/in/gnanavel-premnath-b27a53235/" target="_blank" rel="noopener noreferrer">
-            <AiFillLinkedin className='text-2xl'/>
-          </a>
-          <a href="mailto:gpa21@sfu.ca" target="_blank" rel="noopener noreferrer">
-            <AiFillMail className='text-2xl'/>
-          </a>
-          <a href="https://github.com/gprem09" target="_blank" rel="noopener noreferrer">
-            <AiFillGithub className='text-2xl'/>
-          </a>
-        </div>
-          
-          <ul className='flex item-center'>
-            <li>
-              <DarkModeToggle 
-                isDarkMode={isDarkMode} 
-                toggleDarkMode={() => setIsDarkMode(!isDarkMode)}
-              />
-            </li>
-            <li>
-              <a className={`px-3 py-4 ml-8 transition ${!isDarkMode ? 'bg-color-text' : 'text-custom-cyan'} hover:text-teal-700`} 
-                href='/Gnanavel_Premnath_Resume.pdf' 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                download="Gnanavel_Premnath_Resume.pdf">
-                Resume
-              </a>
-            </li>
-          </ul>
-        </nav>
-        <section className={`banner ${!isDarkMode ? 'light-mode' : ''}`} id='home'>
-          <Container fluid>
-            <Row>
-              <Col xs={12} md={6} xl={7}>
-                <h1>Hi, I&apos;m <span className={`fonts transition ${!isDarkMode ? 'bg-color-text' : 'text-custom-cyan'}`}>Gnanavel</span> Premnath<span className={`p-1 ${!isDarkMode ? 'bg-color-text' : 'text-custom-cyan'}`}>;</span></h1>
+      <section className={`banner ${!isDarkMode ? 'light-mode' : ''}`} id='home'>
+        <Container fluid>
+          <Row>
+            <Col xs={12} md={6} xl={7}>
+              <h1>Hi, I&apos;m <span className={`fonts transition ${!isDarkMode ? 'bg-color-text' : 'text-custom-cyan'}`}>Gnanavel</span> Premnath<span className={`p-1 ${!isDarkMode ? 'bg-color-text' : 'text-custom-cyan'}`}>;</span></h1>
 
-                <h2>
-                  <BsCodeSlash className={`${!isDarkMode ? 'bg-color-text' : 'text-custom-cyan'}`} style={{ display: 'inline-block' }} /> Am I a <span className={`wrap fonts transition ${!isDarkMode ? 'bg-color-text' : 'text-custom-cyan'}`}>
-                    {text}
-                    <span className={`cursor ${shouldBlink ? 'blinking-cursor' : ''}`}>|</span>
-                  </span> Developer?
-                </h2>
-                
-                <p className='ErikasBuero'>
-                I'm passionate about creating applications that can solve real-world problems. I am always looking for new opportunities to learn and grow, and excited to engage with my fellow tech community and level up my professional game. 
-                </p>
-              </Col>
-            </Row>
-          </Container>
-        </section>
-
-        <AboutMe isDarkMode={isDarkMode} skills={skills} hobbies={hobbies} />
-
-        <Projects isDarkMode={isDarkMode} />
-
-        <div className='text-center textColor p-5'>
-          <p className='py-2' style={{ fontSize: '12px' }}>Built and designed by Gnanavel Premnath.</p>
-          <p style={{ fontSize: '12px' }}>All rights reserved. ©</p>
-        </div>
+              <h2>
+                <BsCodeSlash className={`${!isDarkMode ? 'bg-color-text' : 'text-custom-cyan'}`} style={{ display: 'inline-block' }} /> Am I a <span className={`wrap fonts transition ${!isDarkMode ? 'bg-color-text' : 'text-custom-cyan'}`}>
+                  {text}
+                  <span className={`cursor ${shouldBlink ? 'blinking-cursor' : ''}`}>|</span>
+                </span> Developer?
+              </h2>
+              
+              <p className='ErikasBuero'>
+              I'm passionate about creating applications that can solve real-world problems. I am always looking for new opportunities to learn and grow, and excited to engage with my fellow tech community and level up my professional game. 
+              </p>
+            </Col>
+          </Row>
+        </Container>
       </section>
 
-    
+      <AboutMe isDarkMode={isDarkMode} skills={skills} hobbies={hobbies} />
+
+      <Projects isDarkMode={isDarkMode} />
+
+      <div className='text-center textColor p-5'>
+        <p className='py-2' style={{ fontSize: '12px' }}>Built and designed by Gnanavel Premnath.</p>
+        <p style={{ fontSize: '12px' }}>All rights reserved. ©</p>
+      </div>
     </main>
   )
 }
