@@ -12,14 +12,13 @@ export default function Home() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isJumping, setIsJumping] = useState(false);
   const skills = [
-    'Next.js', 'React.js', 'Node.js', 
-    'Angular', 'JavaScript', 'HTML & CSS', 'Tailwind CSS',
-    'C++', 'Python'
+    'python', 'c', 'c++',
+    'java', 'javascript', 'react.js', 
   ];
 
   const hobbies = [
-    'Video editing', 'Photo editing', 'VFX',
-    'Listen podcast', 'Table tennis', 'Gym'
+    'video editing', 'photo editing', 'vfx',
+    '3d animation', 'table tennis', 'gym'
   ];
 
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -146,9 +145,6 @@ export default function Home() {
             </li>
           </ul>
         </nav>
-
-
-
         <section className={`banner ${!isDarkMode ? 'light-mode' : ''}`} id='home'>
           <Container fluid>
             {/* Use fluid for a full-width container */}
