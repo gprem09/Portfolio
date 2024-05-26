@@ -7,7 +7,7 @@ const Projects = ({ isDarkMode }) => {
   const projectData = [
     {
       title: "MRI Analysis",
-      description: "A system to sort MRI scans and find brain tumours. It was tested to be accurate and makes checking scans faster and cheaper.",
+      description: "A system that reads MRI scans and find if tumours exist. It was tested to be accurate and boosted cost-effective preliminary diagnosis in healthcare by reducing time and resources required for MRI analysis.",
       githubLink: "https://github.com/gprem09/Brain-Tumor-Detection"
     },
     {
