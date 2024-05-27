@@ -6,9 +6,9 @@ const ProjectCard = ({ isDarkMode, title, description, githubLink }) => {
     <div className={`glass p-10 rounded-xl my-10 hover:bg-white hover:bg-opacity-5 transition duration-300 ${!isDarkMode ? 'bg-white' : 'boxColor'}`}>
       <div className='flex justify-between'>
         <a href={githubLink} target="_blank" rel="noopener noreferrer">
-          <AiFillGithub className='text-xl'/>
+          <AiFillGithub size={30} className='text-xl'/>
         </a>
-        <AiFillFolderOpen className='text-xl'/>
+        <AiFillFolderOpen size={30} className='text-xl'/>
       </div>
       <h3 className='text-center text-lg font-medium pt-8 pb-2 titleColor' style={{ color: !isDarkMode ? 'rgb(10,25,47)' : '' }}>
         {title}
