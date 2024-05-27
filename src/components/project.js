@@ -6,19 +6,19 @@ import 'src/app/globals.css';
 const Projects = ({ isDarkMode }) => {
   const projectData = [
     {
+      title: "HoloSpace 3D",
+      description: "Built an AI-powered social platform that generates photorealistic 3D scenes from videos, enabling users to share, post, and interact with 3D content across iOS devices for a unique social experience.",
+      githubLink: "https://github.com/reinesana/HoloSpace3D"
+    },
+    {
+      title: "Urban.I",
+      description: "Developed a platform that leverages AI to revitalize urban spaces impacted by conflict or natural disasters, while seamlessly connecting businesses with leading urban planners",
+      githubLink: "https://github.com/gprem09/Urban.I"
+    },
+    {
       title: "MRI Analysis",
       description: "A system that reads MRI scans and find if tumours exist. It was tested to be accurate and boosted cost-effective preliminary diagnosis in healthcare by reducing time and resources required for MRI analysis.",
       githubLink: "https://github.com/gprem09/Brain-Tumor-Detection"
-    },
-    {
-      title: "Prem A.I.",
-      description: "Prem AI is a virtual assistant that learns efficiently when you add information to a specific folder. It makes the process of fine-tuning much simpler.",
-      githubLink: "https://github.com/gprem09/Prem-A.I."
-    },
-    {
-      title: "TubeTalk",
-      description: "A review platform for films and TV that simplifies discovering and discussing critiques. It searches by genre through a media database and uses secure login.",
-      githubLink: "https://github.com/gprem09/Fullstack-Web-Development"
     },
     {
       title: "Spirit Experiment",
